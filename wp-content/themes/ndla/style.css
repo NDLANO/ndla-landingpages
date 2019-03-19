@@ -9276,5 +9276,43 @@ html.ie #root {
     margin-bottom: 13px;
     margin-right: 13px; }
 
-body {
-  font-family: 'Source Sans Pro', sans-serif; }
+.ndla-site {
+  max-width: 1280px;
+  position: relative;
+  margin: 0 auto 0 auto; }
+
+/* Styling for welcome page */
+.ndla-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto 0 auto; }
+  .ndla-welcome__title {
+    margin: 0;
+    font-size: 36px;
+    padding: 8px;
+    box-sizing: border-box;
+    flex: 1 0 140px; }
+  .ndla-welcome__image {
+    flex: 1 0 140px;
+    height: 140px;
+    background: #f7f7f7;
+    margin: 8px;
+    box-sizing: border-box; }
+  .ndla-welcome__description {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 8px;
+    box-sizing: border-box; }
+
+.ndla-header__title img {
+  width: 120px;
+  height: auto; }
+
+.ndla-header__title__alt {
+  display: none;
+  visibility: hidden; }

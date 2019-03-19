@@ -15,4 +15,6 @@
   );
   // Allow block styles
   add_theme_support( 'wp-block-styles' );
+  // Allow responsive media
+  add_theme_support( 'responsive-embeds' );
 ?>

@@ -13,10 +13,13 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-rea
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you’ve learned with others.
 */
-
+@import 'normalize';
 @import '~ndla-core/scss/core';
 @import '~ndla-core/scss/utilities';
 
+@import 'scss/site';
+@import 'scss/header';
+
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  // font-family: 'Source Sans Pro', sans-serif;
 }
