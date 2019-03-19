@@ -9281,6 +9281,14 @@ html.ie #root {
   position: relative;
   margin: 0 auto 0 auto; }
 
+.ndla-header__title img {
+  width: 120px;
+  height: auto; }
+
+.ndla-header__title__alt {
+  display: none;
+  visibility: hidden; }
+
 /* Styling for welcome page */
 .ndla-welcome {
   display: flex;
@@ -9309,10 +9317,34 @@ html.ie #root {
     padding: 8px;
     box-sizing: border-box; }
 
-.ndla-header__title img {
-  width: 120px;
-  height: auto; }
+.ndla-frontpage__latest {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 980px;
+  position: relative;
+  margin: 0 auto 0 auto; }
 
-.ndla-header__title__alt {
-  display: none;
-  visibility: hidden; }
+.ndla-frontpage__post {
+  flex: 1 0 50%;
+  box-sizing: border-box;
+  position: relative;
+  height: 216px;
+  overflow: hidden;
+  padding: 8px; }
+  .ndla-frontpage__post__image {
+    min-height: 200px;
+    background: #f9f9f9;
+    position: absolute;
+    margin: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4; }
+  .ndla-frontpage__post__title {
+    position: relative;
+    z-index: 5;
+    margin-left: 16px; }

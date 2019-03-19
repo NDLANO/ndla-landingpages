@@ -1,0 +1,76 @@
+/* Styling for welcome page */
+.ndla-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto 0 auto;
+
+  &__title {
+    margin: 0;
+    font-size: 36px;
+    padding: 8px;
+    box-sizing: border-box;
+    flex: 1 0 140px;
+  }
+
+  &__image {
+    flex: 1 0 140px;
+    height: 140px;
+    background: #f7f7f7;
+    margin: 8px;
+    box-sizing: border-box;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+}
+
+.ndla-frontpage {
+  &__latest {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 980px;
+    position: relative;
+    margin: 0 auto 0 auto;
+  }
+
+  &__post {
+    flex: 1 0 50%;
+    box-sizing: border-box;
+    position: relative;
+    height: 216px;
+    overflow: hidden;
+    padding: 8px;
+    // margin: 8px;
+
+    &__image {
+      min-height: 200px;
+      background: #f9f9f9;
+      position: absolute;
+      margin: 8px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+    }
+
+    &__title {
+      position: relative;
+      z-index: 5;
+      // top: 180px;
+      margin-left: 16px;
+    }
+  }
+}
