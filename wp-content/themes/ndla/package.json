@@ -1,0 +1,22 @@
+{
+  "name": "ndla-wp-theme",
+  "version": "0.0.1",
+  "description": "Wordpress theme for NDLA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --importer=node_modules/node-sass-tilde-importer --include-path scss style.scss style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "dev": "\"npm run watch-css\""
+  },
+  "author": "Keyteq AS",
+  "license": "ISC",
+  "dependencies": {
+    "ndla-core": "^0.3.7"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "node-sass-tilde-importer": "^1.0.2",
+    "nodemon": "^1.18.10"
+  }
+}
