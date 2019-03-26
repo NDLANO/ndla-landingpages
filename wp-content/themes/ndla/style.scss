@@ -20,12 +20,30 @@ Use it to make something cool, have fun, and share what you’ve learned with ot
 @import 'scss/site';
 @import 'scss/header';
 @import 'scss/frontpage';
+@import 'scss/article';
+@import 'scss/sidebar';
 
 html {
   margin-top: 0 !important;
 }
 
 body {
-  min-height: 100%;
-  overflow-y: auto;
+  background-color: #f8f8f8;
+
+  &.home {
+    background-color: #fff;
+  }
+}
+
+h1 {
+  font-weight: 400;
+}
+
+ul {
+  list-style-position: inside;
+  margin-top: 18px;
+}
+
+figcaption {
+  background-color: inherit;
 }

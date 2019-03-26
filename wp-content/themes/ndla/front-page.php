@@ -4,8 +4,7 @@
    */
    get_header();
 ?>
-
-<div>
+<div class="ndla-frontpage__content">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div>
       <p><?php the_content(__('(more...)')); ?></p>

@@ -1,0 +1,64 @@
+.ndla-sidebar {
+  flex: 1 0 360px;
+  // margin-right: $spacing;
+  // border-radius: 4px;
+  &__widget {
+    // margin-top: 24px;
+    // border-bottom: 2px solid #eaeaea;
+    padding-bottom: 24px;
+    &:first-child {
+      border-bottom: none;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 22px;
+      margin-left: $spacing;
+      margin-right: $spacing;
+    }
+    ul {
+      margin: $spacing;
+    }
+    li {
+      list-style: none;
+    }
+  }
+
+  .menu-hovedmeny-container { // Styling for menu
+    background-color: #deebf6;
+    border-radius: 4px 0 0 4px;
+    // margin-top: 9px;
+    padding-top: $spacing;
+    padding-bottom: $spacing;
+    li {
+      list-style: none;
+      a {
+        color: #184673;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 36px;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+        transform: translateX(0px);
+        display: block;
+        box-shadow: none;
+        &:hover {
+          transform: translateX(16px);
+        }
+      }
+    }
+  }
+  // End of menu styling
+  .search-form { // Search form styling
+    padding: $spacing;
+    .screen-reader-text {
+      display: none;
+    }
+  }
+  // End of search form styling
+
+}

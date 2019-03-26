@@ -1,0 +1,28 @@
+.ndla-article {
+  padding: $spacing;
+  background: #fff;
+  // max-width: 980px;
+  flex: 0 1 980px;
+  position: relative;
+  margin: 0 auto 0 auto;
+
+  &__meta {
+    color: #777;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: $spacing;
+
+    &__seperator {
+      margin-left: 6px;
+      margin-right: 6px;
+      display: inline-block;
+      width: 1px;
+      height: 16px;
+      background-color: #d4d4d4;
+      transform: rotate(30deg);
+      position: relative;
+      top: 2px;
+    }
+  }
+}

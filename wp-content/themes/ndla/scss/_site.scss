@@ -1,5 +1,15 @@
 .ndla-site {
+  width: 100%;
   max-width: 1280px;
-  position: relative;
   margin: 0 auto 0 auto;
+  &__content {
+    position: relative;
+    max-width: 1280px;
+    display: flex;
+    margin: 0 auto 0 auto;
+  }
+}
+
+.ndla-main {
+  display: flex;
 }

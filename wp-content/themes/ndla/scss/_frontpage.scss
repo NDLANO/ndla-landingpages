@@ -34,6 +34,11 @@
 }
 
 .ndla-frontpage {
+  &__content {
+    position: relative;
+    margin: 0 auto 0 auto;
+  }
+
   &__latest, &__section {
     display: flex;
     flex-direction: row;
@@ -115,10 +120,15 @@
 
   &__guide {
     display: inline-block;
-    padding: 4px 8px 4px 8px;
-    margin-right: 16px;
-    border-radius: 4px;
-    color: $brand-color;
-    background-color: $brand-color--light;
+    a {
+      display: block;
+      padding: 4px 8px 4px 8px;
+      margin-right: 16px;
+      border-radius: 4px;
+      color: $brand-color;
+      background-color: $brand-color--light;
+      text-decoration: none;
+      box-shadow: none;
+    }
   }
 }

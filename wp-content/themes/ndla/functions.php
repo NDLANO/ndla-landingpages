@@ -21,13 +21,13 @@
   add_theme_support( 'post-thumbnails' );
 
   /* Actions */
-  function admin_bar(){
+  /*function admin_bar(){
     if(is_user_logged_in()){
       add_filter( 'show_admin_bar', '__return_true' , 1000 );
     }
   }
-  add_action('init', 'admin_bar' );
-
+  add_action('init', 'admin_bar' );*/
+  show_admin_bar(true);
   /*
    * Set post views count using post meta
    */
@@ -43,4 +43,22 @@
           update_post_meta($postID, $countKey, $count);
       }
   }
+
+  /*
+   * Custom sidebar
+   */
+  function ndla_sidebar() {
+    register_sidebar(
+      array (
+          'name' => __( 'Sidebar Widget', 'ndla-theme' ),
+          'id' => 'ndla-sidebar',
+          'description' => __( 'Sidemeny', 'ndla-theme' ),
+          'before_widget' => '<div class="ndla-sidebar__widget">',
+          'after_widget' => "</div>",
+          'before_title' => '<h3 class="ndla-sidebar__widget__title">',
+          'after_title' => '</h3>',
+      )
+    );
+  }
+  add_action( 'widgets_init', 'ndla_sidebar' );
 ?>
