@@ -1,0 +1,12 @@
+.ndla-search {
+  &__results {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    article {
+      flex: 1 0 100%;
+    }
+  }
+}

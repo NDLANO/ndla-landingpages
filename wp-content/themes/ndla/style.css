@@ -9477,11 +9477,21 @@ html.ie #root {
     .ndla-sidebar .search-form .screen-reader-text {
       display: none; }
 
+.ndla-search__results {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .ndla-search__results article {
+    flex: 1 0 100%; }
+
 html {
   overflow: hidden; }
 
 body {
   background-color: #f8f8f8; }
+  body.admin-bar {
+    padding-bottom: 32px; }
   body.home {
     background-color: #fff; }
 

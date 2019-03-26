@@ -22,6 +22,7 @@ Use it to make something cool, have fun, and share what you’ve learned with ot
 @import 'scss/frontpage';
 @import 'scss/article';
 @import 'scss/sidebar';
+@import 'scss/search';
 
 html {
   overflow: hidden;
@@ -29,6 +30,10 @@ html {
 
 body {
   background-color: #f8f8f8;
+
+  &.admin-bar {
+    padding-bottom: 32px;
+  }
 
   &.home {
     background-color: #fff;
