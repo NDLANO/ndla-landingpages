@@ -10,14 +10,19 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('ndla-article'); ?>>
+  <header class="ndla-article__header">
+    <!-- Article title -->
+    <?php the_title( '<h1 class="ndla-article__title">', '</h1>' ); ?>
+    <?php if ( ! is_page() ) : ?>
+      <div class="ndla-article__meta">
+        <span class="ndla-article__meta__time"><?php echo date('d.m.Y', get_post_time()); ?></span>
+        <span class="ndla-article__meta__seperator"></span>
+        <?php echo get_the_author(); ?>
+      </div>
+    <?php endif; ?>
 	</header>
-	<?php endif; ?>
-
-	<div class="entry-content">
+  <div class="ndla-article__content">
 		<?php
 		the_content();
 
@@ -30,26 +35,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'twentynineteen' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-${ID} -->

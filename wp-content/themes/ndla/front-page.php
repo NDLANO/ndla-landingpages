@@ -63,3 +63,6 @@
     <!-- End of guides -->
   </section>
 </div>
+<?php
+  get_footer();
+?>

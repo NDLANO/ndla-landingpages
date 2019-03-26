@@ -9409,9 +9409,9 @@ html.ie #root {
     box-shadow: none; }
 
 .ndla-article {
-  padding: 26px;
+  padding: 26px 8% 26px 8%;
   background: #fff;
-  flex: 0 1 980px;
+  flex: 0 1 900px;
   position: relative;
   margin: 0 auto 0 auto; }
   .ndla-article__meta {
@@ -9468,13 +9468,17 @@ html.ie #root {
         box-shadow: none; }
         .ndla-sidebar .menu-hovedmeny-container li a:hover {
           transform: translateX(16px); }
+      .ndla-sidebar .menu-hovedmeny-container li.current_page_item .sub-menu, .ndla-sidebar .menu-hovedmeny-container li.current_page_ancestor .sub-menu {
+        display: block; }
+    .ndla-sidebar .menu-hovedmeny-container .sub-menu {
+      display: none; }
   .ndla-sidebar .search-form {
     padding: 26px; }
     .ndla-sidebar .search-form .screen-reader-text {
       display: none; }
 
 html {
-  margin-top: 0 !important; }
+  overflow: hidden; }
 
 body {
   background-color: #f8f8f8; }
