@@ -21,6 +21,11 @@ Use it to make something cool, have fun, and share what you’ve learned with ot
 @import 'scss/header';
 @import 'scss/frontpage';
 
+html {
+  margin-top: 0 !important;
+}
+
 body {
-  // font-family: 'Source Sans Pro', sans-serif;
+  min-height: 100%;
+  overflow-y: auto;
 }

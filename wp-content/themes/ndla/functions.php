@@ -17,4 +17,30 @@
   add_theme_support( 'wp-block-styles' );
   // Allow responsive media
   add_theme_support( 'responsive-embeds' );
+  // Add support for thumbnails
+  add_theme_support( 'post-thumbnails' );
+
+  /* Actions */
+  function admin_bar(){
+    if(is_user_logged_in()){
+      add_filter( 'show_admin_bar', '__return_true' , 1000 );
+    }
+  }
+  add_action('init', 'admin_bar' );
+
+  /*
+   * Set post views count using post meta
+   */
+  function setPostViews($postID) {
+      $countKey = 'post_views_count';
+      $count = get_post_meta($postID, $countKey, true);
+      if ($count==''){
+          $count = 0;
+          delete_post_meta($postID, $countKey);
+          add_post_meta($postID, $countKey, '0');
+      } else {
+          $count++;
+          update_post_meta($postID, $countKey, $count);
+      }
+  }
 ?>
