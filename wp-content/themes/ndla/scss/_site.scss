@@ -12,4 +12,10 @@
 
 .ndla-main {
   display: flex;
+
+  &--column {
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto 0 auto;
+  }
 }

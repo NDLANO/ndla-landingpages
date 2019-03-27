@@ -67,6 +67,38 @@
     .screen-reader-text {
       display: none;
     }
+    form {
+      position: relative;
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      .screen-reader-text {
+        display: none;
+      }
+      input {
+        flex: 1 0 auto;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        padding: $spacing--small $spacing $spacing--small $spacing;
+      }
+    }
+    input.search-submit {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      color: $white;
+      background-color: $brand-color;
+      padding: 0 $spacing--small 0 $spacing--small;
+      border: none;
+      border-radius: 0 4px 0 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   // End of search form styling
 
