@@ -9305,8 +9305,9 @@ html.ie #root {
 .ndla-welcome {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   max-width: 980px;
   position: relative;
   margin: 0 auto 0 auto; }
@@ -9316,18 +9317,18 @@ html.ie #root {
     padding: 8px;
     box-sizing: border-box;
     flex: 1 0 140px; }
-  .ndla-welcome__image {
-    flex: 1 0 140px;
-    height: 140px;
-    background: #f7f7f7;
-    margin: 8px;
+  .ndla-welcome .widget_text {
+    flex: 1 0 50%; }
+  .ndla-welcome img {
     box-sizing: border-box; }
-  .ndla-welcome__description {
+  .ndla-welcome p {
     margin: 0;
     font-size: 24px;
     font-weight: 100;
     padding: 8px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    line-height: 32px;
+    text-align: left; }
 
 .ndla-frontpage__content {
   position: relative;
@@ -9371,24 +9372,35 @@ html.ie #root {
     right: 0;
     bottom: 0;
     z-index: 4; }
-    .ndla-frontpage__post__image:after {
-      display: block;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.24); }
     .ndla-frontpage__post__image img {
       width: 100%;
       height: auto; }
   .ndla-frontpage__post__title {
-    position: relative;
+    position: absolute;
     z-index: 5;
-    margin-left: 16px;
-    max-width: 75%;
+    max-width: 67%;
+    color: #444;
+    margin: 0; }
+    .ndla-frontpage__post__title.right {
+      text-align: right;
+      right: 26px; }
+    .ndla-frontpage__post__title:not(.right) {
+      left: 26px; }
+    .ndla-frontpage__post__title.bottom {
+      bottom: 32.5px; }
+    .ndla-frontpage__post__title:not(.bottom) {
+      top: 32.5px; }
+  .ndla-frontpage__post.white .ndla-frontpage__post__title {
     color: #fff; }
+  .ndla-frontpage__post.white .ndla-frontpage__post__image:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.24); }
 
 .ndla-frontpage__mostviewed {
   flex: 1 0 50%; }
@@ -9484,6 +9496,10 @@ html.ie #root {
   flex-wrap: wrap; }
   .ndla-search__results article {
     flex: 1 0 100%; }
+
+/* ndla-hurtigvalg widget */
+.ndla-shortcuts {
+  flex: 1 0 50%; }
 
 html {
   overflow: hidden; }

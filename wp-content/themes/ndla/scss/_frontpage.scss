@@ -2,8 +2,9 @@
 .ndla-welcome {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   max-width: 980px;
   position: relative;
   margin: 0 auto 0 auto;
@@ -16,20 +17,23 @@
     flex: 1 0 140px;
   }
 
-  &__image {
-    flex: 1 0 140px;
-    height: 140px;
-    background: #f7f7f7;
-    margin: 8px;
+  .widget_text {
+    flex: 1 0 50%;
+  }
+  img {
+    // margin: 8px;
+    // margin-right: $spacing;
     box-sizing: border-box;
   }
 
-  &__description {
+  p {
     margin: 0;
     font-size: 24px;
     font-weight: 100;
     padding: 8px;
     box-sizing: border-box;
+    line-height: 32px;
+    text-align: left;
   }
 }
 
@@ -87,13 +91,6 @@
       bottom: 0;
       z-index: 4;
 
-      &:after {
-        display: block;
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.24);
-      }
       img {
         width: 100%;
         height: auto;
@@ -101,12 +98,41 @@
     }
 
     &__title {
-      position: relative;
+      position: absolute;
       z-index: 5;
-      // top: 180px;
-      margin-left: 16px;
-      max-width: 75%;
-      color: #fff;
+
+      max-width: 67%;
+      color: #444;
+      margin: 0;
+      &.right {
+        text-align: right;
+        // max-width: 100%;
+        right: $spacing;
+      }
+      &:not(.right) {
+        left: $spacing;
+      }
+      &.bottom {
+        bottom: $spacing--medium;
+      }
+      &:not(.bottom) {
+        top: $spacing--medium;
+      }
+    }
+
+    &.white {
+      .ndla-frontpage__post__title {
+        color: $white;
+      }
+      .ndla-frontpage__post__image {
+        &:after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.24);
+        }
+      }
     }
   }
 
