@@ -9494,7 +9494,8 @@ html.ie #root {
     .ndla-sidebar .menu-hovedmeny-container .sub-menu {
       display: none; }
   .ndla-sidebar .search-form {
-    padding: 26px; }
+    padding: 26px;
+    position: relative; }
     .ndla-sidebar .search-form .screen-reader-text {
       display: none; }
     .ndla-sidebar .search-form form {
@@ -9518,7 +9519,8 @@ html.ie #root {
       background-color: #20588f;
       padding: 0 13px 0 13px;
       border: none;
-      border-radius: 0 4px 0 0; }
+      border-radius: 0 4px 0 0;
+      display: none; }
       .ndla-sidebar .search-form input.search-submit:hover {
         cursor: pointer; }
 

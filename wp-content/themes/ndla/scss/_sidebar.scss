@@ -64,6 +64,7 @@
   // End of menu styling
   .search-form { // Search form styling
     padding: $spacing;
+    position: relative;
     .screen-reader-text {
       display: none;
     }
@@ -94,6 +95,7 @@
       padding: 0 $spacing--small 0 $spacing--small;
       border: none;
       border-radius: 0 4px 0 0;
+      display: none;
 
       &:hover {
         cursor: pointer;
