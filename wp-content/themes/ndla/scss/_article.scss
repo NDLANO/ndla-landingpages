@@ -6,6 +6,10 @@
   position: relative;
   margin: 0 auto 0 auto;
 
+  &__content {
+    width: 100%;
+  }
+
   &__meta {
     color: #777;
     text-transform: uppercase;

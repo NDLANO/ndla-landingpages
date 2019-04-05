@@ -12,7 +12,8 @@
 
 .ndla-main {
   display: flex;
-
+  width: 100%;
+  max-width: 1280px;
   &--column {
     flex-direction: column;
     position: relative;

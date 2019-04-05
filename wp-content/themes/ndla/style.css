@@ -9287,7 +9287,9 @@ html.ie #root {
     margin: 0 auto 0 auto; }
 
 .ndla-main {
-  display: flex; }
+  display: flex;
+  width: 100%;
+  max-width: 1280px; }
   .ndla-main--column {
     flex-direction: column;
     position: relative;
@@ -9304,35 +9306,6 @@ html.ie #root {
 .ndla-header__title__alt {
   display: none;
   visibility: hidden; }
-
-/* Styling for welcome page */
-.ndla-welcome {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  max-width: 980px;
-  position: relative;
-  margin: 0 auto 0 auto; }
-  .ndla-welcome__title {
-    margin: 0;
-    font-size: 36px;
-    padding: 8px;
-    box-sizing: border-box;
-    flex: 1 0 140px; }
-  .ndla-welcome .widget_text {
-    flex: 1 0 50%; }
-  .ndla-welcome img {
-    box-sizing: border-box; }
-  .ndla-welcome p {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 100;
-    padding: 8px;
-    box-sizing: border-box;
-    line-height: 32px;
-    text-align: left; }
 
 .ndla-frontpage__content {
   position: relative;
@@ -9435,6 +9408,8 @@ html.ie #root {
   flex: 0 1 900px;
   position: relative;
   margin: 0 auto 0 auto; }
+  .ndla-article__content {
+    width: 100%; }
   .ndla-article__meta {
     color: #777;
     text-transform: uppercase;
@@ -9589,9 +9564,68 @@ html.ie #root {
     .ndla-search__results > h1 .query {
       font-weight: 1000; }
 
+.ndla-featured {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  margin: 32.5px auto 0 auto; }
+  .ndla-featured__post {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    padding: 8px; }
+    .ndla-featured__post a {
+      display: block;
+      height: 100%;
+      width: 100%; }
+    .ndla-featured__post__title {
+      position: absolute;
+      z-index: 5;
+      max-width: 67%;
+      color: #444;
+      margin: 0; }
+
 /* ndla-hurtigvalg widget */
 .ndla-shortcuts {
   flex: 1 0 50%; }
+
+/* Styling for welcome widgets */
+.ndla-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto 0 auto; }
+  .ndla-welcome__title {
+    margin: 0;
+    font-size: 36px;
+    padding: 8px 0 8px 0;
+    box-sizing: border-box;
+    flex: 1 0 140px; }
+  .ndla-welcome__widget.widget_text {
+    flex: 1 0 50%; }
+    .ndla-welcome__widget.widget_text p {
+      padding: 0; }
+  .ndla-welcome__widget.widget_media_image {
+    flex: 0 1 auto;
+    box-sizing: border-box; }
+  .ndla-welcome p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 8px;
+    box-sizing: border-box;
+    line-height: 32px;
+    text-align: left; }
 
 html {
   overflow: hidden; }

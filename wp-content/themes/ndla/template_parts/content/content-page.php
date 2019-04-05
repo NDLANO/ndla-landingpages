@@ -10,29 +10,34 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('ndla-article'); ?>>
-  <header class="ndla-article__header">
-    <!-- Article title -->
-    <?php the_title( '<h1 class="ndla-article__title">', '</h1>' ); ?>
-    <?php if ( ! is_page() ) : ?>
-      <div class="ndla-article__meta">
-        <span class="ndla-article__meta__time"><?php echo date('d.m.Y', get_post_time()); ?></span>
-        <span class="ndla-article__meta__seperator"></span>
-        <?php echo get_the_author(); ?>
-      </div>
-    <?php endif; ?>
-	</header>
-  <div class="ndla-article__content">
-		<?php
-		the_content();
+<div class="ndla-frontpage__content">
+  <article id="post-<?php the_ID(); ?>" <?php post_class('ndla-article'); ?>>
+    <div class="ndla-article__content">
+      <?php
+        function is_landingpage($categories) {
+          foreach ($categories as $category) {
+            if ($category === 'landingside') {
+              return 1;
+            }
+          }
+          return 0;
+        }
+        $post_categories = get_the_terms( $id, 'category' );
+        $categories = wp_list_pluck( $post_categories, 'slug' );
+      ?>
+      <!-- Load widget for if page is landing page -->
+      <?php if ( is_page() && is_landingpage($categories)) : ?>
+        <div class="ndla-welcome">
+          <?php dynamic_sidebar('ndla-welcome-for-elever'); ?>
+        </div>
+        <div class="ndla-featured">
+          <?php dynamic_sidebar('ndla-featured'); ?>
+        </div>
+      <?php else : ?>
+        <h3>Not landing page</h3>
+        <?php the_content(); ?>
+      <?php endif; ?>
+  	</div><!-- .entry-content -->
 
-		/* wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
-				'after'  => '</div>',
-			)
-		); */
-		?>
-	</div><!-- .entry-content -->
-
-</article><!-- #post-${ID} -->
+  </article><!-- #post-${ID} -->
+</div>
