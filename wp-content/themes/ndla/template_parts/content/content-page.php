@@ -23,10 +23,17 @@
           return 0;
         }
         $post_categories = get_the_terms( $id, 'category' );
-        $categories = wp_list_pluck( $post_categories, 'slug' );
+        if ($post_categories) {
+          $categories = wp_list_pluck( $post_categories, 'slug' );
+        } else {
+          $categories = array();
+        }
       ?>
+      <pre>
+        <?php print_r(get_categories()) ?>
+      </pre>
       <!-- Load widget for if page is landing page -->
-      <?php if ( is_page() && is_landingpage($categories)) : ?>
+      <?php if ( is_page() && is_landingpage($categories) ) : ?> <!--  -->
         <div class="ndla-welcome">
           <?php dynamic_sidebar('ndla-welcome-for-elever'); ?>
         </div>
@@ -34,10 +41,9 @@
           <?php dynamic_sidebar('ndla-featured'); ?>
         </div>
       <?php else : ?>
-        <h3>Not landing page</h3>
         <?php the_content(); ?>
       <?php endif; ?>
-  	</div><!-- .entry-content -->
+  	</div><!-- .ndla-article__content -->
 
   </article><!-- #post-${ID} -->
 </div>

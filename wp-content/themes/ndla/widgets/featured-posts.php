@@ -49,7 +49,6 @@
     }
 
     function update( $new_instance, $old_instance ) {
-      // Save widget options
       $instance = array();
     	$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 
@@ -67,18 +66,57 @@
   		) );
       $selected_posts = ! empty( $instance['selected_posts'] ) ? $instance['selected_posts'] : array();
       ?>
-      <div style="max-height: 120px; overflow: auto;">
-      	<ul>
-      	<?php foreach ( $posts as $post ) { ?>
-      		<li>
-            <input
-      			type="checkbox"
-      			name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]"
+      <div>
+        <!-- Post 1 -->
+        <label>Post 1</label>
+        <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
+          <option value="null">Velg post</option>
+        	<?php foreach ( $posts as $post ) { ?>
+        		<option
+        			value="<?php echo $post->ID; ?>"
+              <?php echo $selected_posts[0] == $post->ID ? 'selected' : '' ?>
+            >
+        			<?php echo get_the_title( $post->ID ); ?>
+            </option>
+        	<?php } ?>
+        </select>
+      <!-- Post 2 -->
+      <label>Post 2</label>
+      <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
+        <option value="null">Velg post</option>
+        <?php foreach ( $posts as $post ) { ?>
+      		<option
       			value="<?php echo $post->ID; ?>"
-      			<?php checked( ( in_array( $post->ID, $selected_posts ) ) ? $post->ID : '', $post->ID ); ?> />
-      			<?php echo get_the_title( $post->ID ); ?></li>
+            <?php echo $selected_posts[1] == $post->ID ? 'selected' : '' ?>
+          >
+      			<?php echo get_the_title( $post->ID ); ?>
+          </option>
       	<?php } ?>
-      	</ul>
+      </select>
+      <label>Post 3</label>
+      <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
+        <option value="null">Velg post</option>
+        <?php foreach ( $posts as $post ) { ?>
+          <option
+            value="<?php echo $post->ID; ?>"
+            <?php echo $selected_posts[2] == $post->ID ? 'selected' : '' ?>
+          >
+            <?php echo get_the_title( $post->ID ); ?>
+          </option>
+        <?php } ?>
+      </select>
+      <label>Post 4</label>
+      <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
+        <option value="null">Velg post</option>
+        <?php foreach ( $posts as $post ) { ?>
+      		<option
+      			value="<?php echo $post->ID; ?>"
+            <?php echo $selected_posts[3] == $post->ID ? 'selected' : '' ?>
+          >
+      			<?php echo get_the_title( $post->ID ); ?>
+          </option>
+      	<?php } ?>
+      </select>
       	</div>
       	<?php
     }
