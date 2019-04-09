@@ -1,0 +1,85 @@
+.ndla-search {
+  &__header {
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto 0 auto;
+    &__title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 32px;
+      color: #444;
+    }
+
+    form {
+      position: relative;
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      .screen-reader-text {
+        display: none;
+      }
+      input {
+        flex: 1 0 auto;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        padding: $spacing--small $spacing $spacing--small $spacing;
+      }
+    }
+    input.search-submit {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      color: $white;
+      background-color: $brand-color;
+      padding: 0 $spacing--small 0 $spacing--small;
+      border: none;
+      border-radius: 0 4px 0 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .search-count {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+  &__results {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    margin: 8px auto 0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    background: $white;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #E2E2E2;
+
+    article {
+      // flex: 1 0 100%;
+      flex: auto;
+      padding-top: 0;
+    }
+
+    > h1 {
+      margin: 0;
+      margin: $spacing 8% $spacing 8%;
+      padding-bottom: $spacing;
+      font-size: 24px;
+      line-height: 31px;
+      border-bottom: 1px solid #CEDDEA;
+      .query {
+        font-weight: 1000;
+      }
+    }
+  }
+}

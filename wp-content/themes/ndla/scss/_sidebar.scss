@@ -1,0 +1,107 @@
+.ndla-sidebar {
+  flex: 1 0 360px;
+  // margin-right: $spacing;
+  // border-radius: 4px;
+  &__widget {
+    // margin-top: 24px;
+    // border-bottom: 2px solid #eaeaea;
+    padding-bottom: 24px;
+    &:first-child {
+      border-bottom: none;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 22px;
+      margin-left: $spacing;
+      margin-right: $spacing;
+    }
+    ul {
+      margin: $spacing;
+    }
+    li {
+      list-style: none;
+    }
+  }
+
+  .menu-hovedmeny-container { // Styling for menu
+    background-color: #deebf6;
+    border-radius: 4px 0 0 4px;
+    // margin-top: 9px;
+    padding-top: $spacing;
+    padding-bottom: $spacing;
+    li {
+      list-style: none;
+      a {
+        color: #184673;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 36px;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+        transform: translateX(0px);
+        display: block;
+        box-shadow: none;
+        &:hover {
+          transform: translateX(16px);
+        }
+      }
+      &.current_page_item, &.current_page_ancestor {
+        .sub-menu {
+          display: block;
+        }
+      }
+    }
+
+    .sub-menu {
+      display: none;
+    }
+  }
+  // End of menu styling
+  .search-form { // Search form styling
+    padding: $spacing;
+    position: relative;
+    .screen-reader-text {
+      display: none;
+    }
+    form {
+      position: relative;
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      .screen-reader-text {
+        display: none;
+      }
+      input {
+        flex: 1 0 auto;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        padding: $spacing--small $spacing $spacing--small $spacing;
+      }
+    }
+    input.search-submit {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      color: $white;
+      background-color: $brand-color;
+      padding: 0 $spacing--small 0 $spacing--small;
+      border: none;
+      border-radius: 0 4px 0 0;
+      display: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  // End of search form styling
+
+}

@@ -1,0 +1,128 @@
+.ndla-frontpage {
+  &__content {
+    position: relative;
+    margin: 0 auto 0 auto;
+  }
+
+  &__latest, &__section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 980px;
+    position: relative;
+    margin: $spacing--medium auto 0 auto;
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    ul {
+      padding: 0;
+      margin: $spacing 0 0 0;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      font-weight: 600;
+    }
+  }
+
+  &__post {
+    flex: 1 0 50%;
+    box-sizing: border-box;
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    padding: 8px;
+    &:hover {
+      img {
+        transform: scale(1.25);
+      }
+    }
+
+    &__image {
+      min-height: 240px;
+      background: #f9f9f9;
+      position: absolute;
+      margin: 8px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        transform: scale(1);
+        transition: transform ease 1s;
+      }
+    }
+
+    &__title {
+      position: absolute;
+      z-index: 5;
+
+      max-width: 67%;
+      color: #444;
+      margin: 0;
+      &.right {
+        text-align: right;
+        // max-width: 100%;
+        right: $spacing;
+      }
+      &:not(.right) {
+        left: $spacing;
+      }
+      &.bottom {
+        bottom: $spacing--medium;
+      }
+      &:not(.bottom) {
+        top: $spacing--medium;
+      }
+    }
+
+    &.white {
+      .ndla-frontpage__post__title {
+        color: $white;
+      }
+      .ndla-frontpage__post__image {
+        &:after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.24);
+        }
+      }
+    }
+  }
+
+  &__mostviewed {
+    flex: 1 0 50%;
+  }
+
+  &__guides {
+    flex: 1 0 50%;
+  }
+
+  &__guide {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 4px 8px 4px 8px;
+      margin-right: 16px;
+      border-radius: 4px;
+      color: $brand-color;
+      background-color: $brand-color--light;
+      text-decoration: none;
+      box-shadow: none;
+    }
+  }
+}
