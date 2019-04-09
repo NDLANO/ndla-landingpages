@@ -10,7 +10,7 @@
     function __construct() {
       $widget_ops = array(
     		'classname' => 'ndla-featured',
-    		'description' => 'A plugin for listing featured posts on landing pages',
+    		'description' => 'A plugin for listing featured posts on a landing page',
     	);
       // Instantiate the parent object
       parent::__construct( false, 'Landing page Featured Posts', $widget_ops );
@@ -76,7 +76,7 @@
         			value="<?php echo $post->ID; ?>"
               <?php echo $selected_posts[0] == $post->ID ? 'selected' : '' ?>
             >
-        			<?php echo get_the_title( $post->ID ); ?>
+        			<?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
             </option>
         	<?php } ?>
         </select>
@@ -89,7 +89,7 @@
       			value="<?php echo $post->ID; ?>"
             <?php echo $selected_posts[1] == $post->ID ? 'selected' : '' ?>
           >
-      			<?php echo get_the_title( $post->ID ); ?>
+      			<?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
           </option>
       	<?php } ?>
       </select>
@@ -101,7 +101,7 @@
             value="<?php echo $post->ID; ?>"
             <?php echo $selected_posts[2] == $post->ID ? 'selected' : '' ?>
           >
-            <?php echo get_the_title( $post->ID ); ?>
+            <?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
           </option>
         <?php } ?>
       </select>
@@ -113,7 +113,7 @@
       			value="<?php echo $post->ID; ?>"
             <?php echo $selected_posts[3] == $post->ID ? 'selected' : '' ?>
           >
-      			<?php echo get_the_title( $post->ID ); ?>
+      			<?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
           </option>
       	<?php } ?>
       </select>
