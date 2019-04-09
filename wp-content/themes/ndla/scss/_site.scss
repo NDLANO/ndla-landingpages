@@ -12,11 +12,47 @@
 
 .ndla-main {
   display: flex;
-  width: 100%;
-  max-width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 1280px;
   &--column {
     flex-direction: column;
     position: relative;
     margin: 0 auto 0 auto;
+  }
+}
+
+.ndla-breadcrumb {
+  flex: 1 0 100%;
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto 0 auto;
+
+  &__item {
+    list-style: none;
+    display: inline-block;
+    font-size: 18px;
+    a {
+      color: #444;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      line-height: 32px;
+      display: inline-block;
+      outline: none;
+      box-shadow: none;
+
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid transparent ;
+        color: #444;
+      }
+    }
+    > .fas {
+      font-size: 10px;
+      margin-left: 8px;
+      margin-right: 8px;
+      display: inline-block;
+    }
   }
 }

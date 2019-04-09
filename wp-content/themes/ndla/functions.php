@@ -54,36 +54,6 @@
     );
   }
 
-  /* Custom shortcut widget for frontpage */
-  /* function register_featured_posts() {
-    register_sidebar(
-      array(
-        'name'          => __( 'Utvalde inlegg', 'ndla2019' ),
-        'id'            => 'ndla-featured',
-        'class'         => 'ndla-featured',
-        'description'   => __( 'Innehold for utvalde poster for landingside.', 'ndla2019' ),
-        'before_widget' => '<div id="%1$s" class="widget ndla-featured %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2>',
-        'after_title'   => '</h2>',
-      )
-    );
-  } */
-  /* Custom shortcut widget for frontpage */
-  function register_shortcuts() {
-    register_sidebar(
-  		array(
-  			'name'          => __( 'Hurtigvalg landingside', 'ndla2019' ),
-  			'id'            => 'ndla-hurtigvalg',
-  			'description'   => __( 'Innehold for hurtigvalgs widget.', 'ndla2019' ),
-  			'before_widget' => '<div id="%1$s" class="widget ndla-shortcuts %2$s">',
-  			'after_widget'  => '</div>',
-  			'before_title'  => '<h3 class="widget-title">',
-  			'after_title'   => '</h3>',
-  		)
-    );
-  }
-
   /* Add widget for for-elever */
   function register_for_elever_widget() {
     register_sidebar(
@@ -126,8 +96,5 @@
 
   /* Widget for welcome widget for pages */
   add_action( 'widgets_init', 'ndla_sidebar' );
-  add_action( 'widgets_init', 'register_shortcuts' );
-  // add_action( 'widgets_init', 'register_welcome_widget' );
-  // add_action( 'widgets_init', 'register_featured_posts' );
-  // add_action( 'widgets_init', 'register_for_elever_widget' );
+  // add_action( 'widgets_init', 'register_shortcuts' );
 ?>

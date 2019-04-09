@@ -9288,12 +9288,41 @@ html.ie #root {
 
 .ndla-main {
   display: flex;
-  width: 100%;
-  max-width: 1280px; }
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 1280px; }
   .ndla-main--column {
     flex-direction: column;
     position: relative;
     margin: 0 auto 0 auto; }
+
+.ndla-breadcrumb {
+  flex: 1 0 100%;
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto 0 auto; }
+  .ndla-breadcrumb__item {
+    list-style: none;
+    display: inline-block;
+    font-size: 18px; }
+    .ndla-breadcrumb__item a {
+      color: #444;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      line-height: 32px;
+      display: inline-block;
+      outline: none;
+      box-shadow: none; }
+      .ndla-breadcrumb__item a:hover {
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        color: #444; }
+    .ndla-breadcrumb__item > .fas {
+      font-size: 10px;
+      margin-left: 8px;
+      margin-right: 8px;
+      display: inline-block; }
 
 .ndla-header__title a {
   text-decoration: none;
@@ -9436,7 +9465,8 @@ html.ie #root {
 .ndla-article {
   padding: 26px 8% 26px 8%;
   background: #fff;
-  flex: 0 1 900px;
+  max-width: 980px;
+  flex: 0 1 980px;
   position: relative;
   margin: 0 auto 0 auto; }
   .ndla-article__content {

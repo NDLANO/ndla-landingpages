@@ -1,7 +1,6 @@
 <?php
-  // get_header();
+  $page_slug = get_queried_object()->post_name;
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class('ndla-article'); ?>>
   <header class="ndla-article__header">
     <!-- Article title -->
@@ -15,16 +14,7 @@
     <?php endif; ?>
 	</header>
   <div class="ndla-article__content">
-		<?php
-		the_content();
-
-		/* wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
-				'after'  => '</div>',
-			)
-		); */
-		?>
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-${ID} -->

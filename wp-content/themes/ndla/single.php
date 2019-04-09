@@ -1,9 +1,19 @@
 <?php get_header(); ?>
-<div id="primary" class="content-area">
+<?php
+  global $wp_query;
+  $postID = $wp_query->post->ID;
+  $postCategories = wp_get_post_categories($postID);
+  $category = get_category($postCategories[0]);
+?>
+<div id="primary" class="ndla-content-area">
   <main id="main" class="ndla-main" role="main">
-    <aside class="ndla-sidebar">
+    <ul class="ndla-breadcrumb">
+      <li class="ndla-breadcrumb__item"><a href="<?php echo get_site_url() . '/' . $category->slug; ?>/"><?php echo $category->name; ?></a> <i class="fas fa-chevron-right"></i></li>
+      <li class="ndla-breadcrumb__item"><?php the_title(); ?></li>
+    </ul>
+    <!-- <aside class="ndla-sidebar">
       <?php dynamic_sidebar( 'ndla-sidebar' ); ?>
-    </aside>
+    </aside> -->
     <?php
     // Start the loop.
     while ( have_posts() ) : the_post();
@@ -15,18 +25,6 @@
       if ( comments_open() || get_comments_number() ) :
           comments_template();
       endif;
-
-      // Previous/next post navigation.
-      /* the_post_navigation( array(
-          'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentyfifteen' ) . '</span> ' .
-              '<span class="screen-reader-text">' . __( 'Next post:', 'twentyfifteen' ) . '</span> ' .
-              '<span class="post-title">%title</span>',
-          'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentyfifteen' ) . '</span> ' .
-              '<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
-              '<span class="post-title">%title</span>',
-      ) ); */
-
-    // End the loop.
     endwhile;
     ?>
   </main><!-- .site-main -->
