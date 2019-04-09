@@ -18,6 +18,7 @@
 
     function widget( $args, $instance ) {
       global $post;
+      $headerPositionClass = array('left top', 'right top', 'left bottom', 'right bottom');
       // Widget output
       echo $args['before_widget'];
     	if ( ! empty( $instance['title'] ) ) {
@@ -27,19 +28,18 @@
     	if( ! empty( $instance['selected_posts'] ) && is_array( $instance['selected_posts'] ) ){
     		$selected_posts = get_posts( array( 'post__in' => $instance['selected_posts'] ) );
     		?>
-      <?php foreach($selected_posts as $post) : setup_postdata($post) ?>
-        <div class="ndla-featured__post">
+      <?php foreach($selected_posts as $key=>$post) : setup_postdata($post) ?>
+        <div class="ndla-featured__post <?php echo get_field('white')[0]; ?>">
           <a href="<?php echo get_permalink($post->ID) ?>">
-            <div class="ndla-frontpage__post__image">
+            <div class="ndla-featured__post__image">
               <?php print the_post_thumbnail( 'medium_large' ); ?>
             </div>
-            <h2 class="ndla-frontpage__post__title">
+            <h2 class="ndla-featured__post__title <?php echo $headerPositionClass[$key]; ?>">
               <?php echo $post->post_title; ?>
             </h2>
           </a>
         </div>
       <?php endforeach ?>
-
     		<?php
     	}else {
     		echo esc_html__( 'No posts selected!', 'text_domain' );

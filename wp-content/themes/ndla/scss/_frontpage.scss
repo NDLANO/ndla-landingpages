@@ -2,6 +2,9 @@
   &__content {
     position: relative;
     margin: 0 auto 0 auto;
+    width: 100%;
+    max-width: 980px;
+    box-sizing: border-box;
   }
 
   &__latest, &__section {
@@ -86,6 +89,7 @@
       &:not(.bottom) {
         top: $spacing--medium;
       }
+
     }
 
     &.white {
@@ -123,6 +127,46 @@
       background-color: $brand-color--light;
       text-decoration: none;
       box-shadow: none;
+    }
+  }
+}
+
+.ndla-links {
+  display: flex;
+  flex-direction: row;
+  h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  &__mostviewed {
+    flex: 1 0 50%;
+    padding: 0 $spacing--small 0 $spacing--small;
+  }
+
+  &__guides {
+    flex: 1 0 50%;
+    padding: 0 $spacing--small 0 $spacing--small;
+  }
+
+}
+
+.ndla-guide {
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 4px 8px 4px 8px;
+      margin-right: 16px;
+      border-radius: 4px;
+      color: $brand-color;
+      background-color: $brand-color--light;
+      text-decoration: none;
+      box-shadow: none;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $brand-color--lighter;
+      }
     }
   }
 }

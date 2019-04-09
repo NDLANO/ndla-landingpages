@@ -1,6 +1,7 @@
 <?php
   require_once('featured-posts.php');
   require_once('featured-posts-sidebar.php');
+  require_once('guide.php');
   require_once('welcome.php');
 
   function myplugin_register_widgets() {
@@ -29,6 +30,12 @@
         $page->post_title,
         $page->post_name,
         "Innehold for utvalde inlegg for ". $page->post_title
+      );
+
+      register_page_guide(
+        $page->post_title,
+        $page->post_name,
+        "Hurtigvalg for ". $page->post_title
       );
     }
   }

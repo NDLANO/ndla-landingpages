@@ -9309,7 +9309,10 @@ html.ie #root {
 
 .ndla-frontpage__content {
   position: relative;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 0 auto;
+  width: 100%;
+  max-width: 980px;
+  box-sizing: border-box; }
 
 .ndla-frontpage__latest, .ndla-frontpage__section {
   display: flex;
@@ -9401,6 +9404,34 @@ html.ie #root {
     background-color: #ceddea;
     text-decoration: none;
     box-shadow: none; }
+
+.ndla-links {
+  display: flex;
+  flex-direction: row; }
+  .ndla-links h2 {
+    text-transform: uppercase;
+    font-weight: 700; }
+  .ndla-links__mostviewed {
+    flex: 1 0 50%;
+    padding: 0 13px 0 13px; }
+  .ndla-links__guides {
+    flex: 1 0 50%;
+    padding: 0 13px 0 13px; }
+
+.ndla-guide li {
+  display: inline-block; }
+  .ndla-guide li a {
+    display: block;
+    padding: 4px 8px 4px 8px;
+    margin-right: 16px;
+    border-radius: 4px;
+    color: #20588f;
+    background-color: #ceddea;
+    text-decoration: none;
+    box-shadow: none;
+    font-weight: 600; }
+    .ndla-guide li a:hover {
+      background-color: #deebf6; }
 
 .ndla-article {
   padding: 26px 8% 26px 8%;
@@ -9590,6 +9621,42 @@ html.ie #root {
       max-width: 67%;
       color: #444;
       margin: 0; }
+      .ndla-featured__post__title.right {
+        text-align: right;
+        right: 26px; }
+      .ndla-featured__post__title:not(.right) {
+        left: 26px; }
+      .ndla-featured__post__title.bottom {
+        bottom: 32.5px; }
+      .ndla-featured__post__title:not(.bottom) {
+        top: 32.5px; }
+    .ndla-featured__post__image {
+      min-height: 240px;
+      background: #f9f9f9;
+      position: absolute;
+      margin: 8px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+      overflow: hidden; }
+      .ndla-featured__post__image img {
+        width: 100%;
+        height: auto;
+        transform: scale(1);
+        transition: transform ease 1s; }
+    .ndla-featured__post.white .ndla-featured__post__title {
+      color: #fff; }
+    .ndla-featured__post.white .ndla-featured__post__image:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.24); }
 
 /* ndla-hurtigvalg widget */
 .ndla-shortcuts {
@@ -9611,13 +9678,15 @@ html.ie #root {
     padding: 8px 0 8px 0;
     box-sizing: border-box;
     flex: 1 0 140px; }
-  .ndla-welcome__widget.widget_text {
-    flex: 1 0 50%; }
-    .ndla-welcome__widget.widget_text p {
-      padding: 0; }
   .ndla-welcome__widget.widget_media_image {
     flex: 0 1 auto;
     box-sizing: border-box; }
+  .ndla-welcome__widget.widget_text {
+    flex: 1 0 50%; }
+  .ndla-welcome__widget .textwidget {
+    padding-right: 26px; }
+    .ndla-welcome__widget .textwidget p {
+      padding: 0; }
   .ndla-welcome p {
     margin: 0;
     font-size: 24px;

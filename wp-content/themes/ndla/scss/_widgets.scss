@@ -24,18 +24,23 @@
     flex: 1 0 140px;
   }
 
-  &__widget.widget_text {
-    flex: 1 0 50%;
-    p {
-      padding: 0; // $spacing--small 0 $spacing--small
-    }
-  }
-
   &__widget.widget_media_image {
     flex: 0 1 auto;
     // margin: 8px;
     // margin-right: $spacing;
     box-sizing: border-box;
+  }
+
+  &__widget {
+    &.widget_text {
+      flex: 1 0 50%;
+    }
+    .textwidget {
+      padding-right: $spacing;
+      p {
+        padding: 0;
+      }
+    }
   }
 
   p {

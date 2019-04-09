@@ -15,7 +15,7 @@
   <header id="masthead" class="ndla-header">
     <h1 class="ndla-header__title">
 			<a href="<?php print get_home_url(); ?>">
-				<img src="<?php echo get_site_url() . "/wp-content/uploads/2019/03/ndlalogo.png" ?>" alt="Logotyp for NDLA" />
+				<img src="<?php echo get_site_url() . "/wp-content/uploads/2019/04/ndlalogo.png" ?>" alt="Logotyp for NDLA" />
 				<span class="ndla-header__title__alt">NDLA - Nasjonal Digital Læringsarena</span>
 			</a>
 		</h1>

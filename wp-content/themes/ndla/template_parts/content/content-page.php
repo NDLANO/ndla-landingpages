@@ -17,7 +17,6 @@
       <?php
         $page_slug = get_queried_object()->post_name;
       ?>
-
       <?php if ( is_page() && ndla_is_landing_page(get_the_terms( $id, 'category' )) ) : ?> <!--  -->
         <div class="ndla-welcome">
           <?php dynamic_sidebar('ndla-welcome-' . $page_slug); ?>
@@ -25,6 +24,18 @@
         <div class="ndla-featured">
           <?php dynamic_sidebar('ndla-featured-' . $page_slug); ?>
         </div>
+        <div class="ndla-links">
+          <div class="ndla-links__mostviewed">
+            <h2>Mest brukt</h2>
+            <div class="ndla-mostviewed">
+              
+            </div>
+          </div>
+          <div class="ndla-links__guides">
+            <?php dynamic_sidebar('ndla-guide-' . $page_slug); ?>
+          </div>
+        </div>
+      <!-- End of landing page -->
       <?php else : ?>
         <?php the_content(); ?>
       <?php endif; ?>

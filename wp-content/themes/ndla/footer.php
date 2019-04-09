@@ -13,9 +13,6 @@
 ?>
 
 	</div><!-- #content -->
-	<!-- <footer id="colophon" class="site-footer">
-    <h2>Footer</h2> -->
-  <!-- </footer>#colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

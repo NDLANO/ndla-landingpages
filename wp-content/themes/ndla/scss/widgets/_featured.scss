@@ -29,6 +29,56 @@
       max-width: 67%;
       color: #444;
       margin: 0;
+      &.right {
+        text-align: right;
+        // max-width: 100%;
+        right: $spacing;
+      }
+      &:not(.right) {
+        left: $spacing;
+      }
+      &.bottom {
+        bottom: $spacing--medium;
+      }
+      &:not(.bottom) {
+        top: $spacing--medium;
+      }
+    }
+
+    &__image {
+      min-height: 240px;
+      background: #f9f9f9;
+      position: absolute;
+      margin: 8px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        transform: scale(1);
+        transition: transform ease 1s;
+      }
+    }
+
+    &.white {
+      .ndla-featured__post__title {
+        color: $white;
+      }
+      
+      .ndla-featured__post__image {
+        &:after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.24);
+        }
+      }
     }
   }
 }
