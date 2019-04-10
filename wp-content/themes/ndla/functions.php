@@ -54,22 +54,6 @@
     );
   }
 
-  /* Add widget for for-elever */
-  function register_for_elever_widget() {
-    register_sidebar(
-  		array(
-  			'name'          => __( 'Velkomsttekst for elevside', 'ndla2019' ),
-  			'id'            => 'ndla-welcome-for-elever',
-        'class'         => 'ndla-welcome',
-  			'description'   => __( 'Innehold for-elever landingside velkomst-widget.', 'ndla2019' ),
-  			'before_widget' => '<div id="%1$s" class="ndla-welcome__widget %2$s">',
-  			'after_widget'  => '</div>',
-  			'before_title'  => '<h2 class="ndla-welcome__title">',
-  			'after_title'   => '</h2>',
-  		)
-    );
-  }
-
   /* Function for determining if page is landing page */
   function ndla_is_landing_page($categories) {
     if ($categories) {
@@ -82,7 +66,6 @@
         }
       }
     }
-
     return 0;
   }
 
@@ -92,6 +75,22 @@
     $categories = get_categories();
 
     return $categories;
+  }
+
+  /*  Function for getting the most viewed posts for a category */
+  function ndla_get_most_viewed($category) {
+    // $mostViewed = query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC');
+    $getPosts = get_posts(array(
+      'numberposts' => 4,
+      'post_type' => 'post',
+      'meta_key' => 'post_views_count',
+      'order_by' => 'meta_value_num',
+      'taxonomy' => 'category',
+                'field' => 'slug',
+                'term' => $category
+    ));
+
+    return $getPosts;
   }
 
   /* Widget for welcome widget for pages */

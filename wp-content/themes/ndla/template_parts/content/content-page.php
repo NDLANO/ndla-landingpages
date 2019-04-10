@@ -28,7 +28,7 @@
           <div class="ndla-links__mostviewed">
             <h2>Mest brukt</h2>
             <div class="ndla-mostviewed">
-              
+              <?php print_r(ndla_get_most_viewed($page_slug)); ?>
             </div>
           </div>
           <div class="ndla-links__guides">

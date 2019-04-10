@@ -10,10 +10,10 @@
     function __construct() {
       $widget_ops = array(
     		'classname' => 'ndla-featured',
-    		'description' => 'A plugin for listing featured posts on a landing page',
+    		'description' => 'Widget for utvalde inlegg for landingside',
     	);
       // Instantiate the parent object
-      parent::__construct( false, 'Landing page Featured Posts', $widget_ops );
+      parent::__construct( false, 'Utvalde inlegg landingside', $widget_ops );
     }
 
     function widget( $args, $instance ) {
@@ -61,61 +61,101 @@
     function form( $instance ) {
       // Output admin widget options form
       // 'posts_per_page' => 20,
-      $posts = get_posts( array(
+      /* $posts = get_posts( array(
   			'offset' => 0
-  		) );
+  		) ); */
       $selected_posts = ! empty( $instance['selected_posts'] ) ? $instance['selected_posts'] : array();
+      // Get all categories
+      $args = array(
+        'post_type' => 'page',
+        'taxonomy' => 'category',
+                'field' => 'slug',
+                'term' => 'landingside'
+      );
+      $landingPages = get_posts($args);
+      $posts = array();
+      ?>
+      <?php
+        foreach($landingPages as $page) {
+          $getPosts = get_posts(array(
+            'post_type' => 'post',
+            'taxonomy' => 'category',
+                      'field' => 'slug',
+                      'term' => $page->post_name
+          ));
+          // print $page->post_name . ' : ';
+          array_push($posts, array(
+            name => $page->post_title,
+            posts => $getPosts
+          ));
+        }
       ?>
       <div>
         <!-- Post 1 -->
-        <label>Post 1</label>
+        <label>Inlegg 1</label>
         <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
           <option value="null">Velg post</option>
         	<?php foreach ( $posts as $post ) { ?>
-        		<option
-        			value="<?php echo $post->ID; ?>"
-              <?php echo $selected_posts[0] == $post->ID ? 'selected' : '' ?>
-            >
-        			<?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
-            </option>
+            <optgroup label="<?php print $post['name']; ?>">
+              <?php foreach ($post['posts'] as $p) : ?>
+                <option
+                  value="<?php echo $p->ID; ?>"
+                  <?php echo $selected_posts[0] == $p->ID ? 'selected' : '' ?>
+                >
+                  <?php echo get_the_title( $p->ID ); ?>
+                </option>
+              <?php endforeach; ?>
+            </optgroup>
         	<?php } ?>
         </select>
       <!-- Post 2 -->
-      <label>Post 2</label>
+      <label>Inlegg 2</label>
       <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
         <option value="null">Velg post</option>
         <?php foreach ( $posts as $post ) { ?>
-      		<option
-      			value="<?php echo $post->ID; ?>"
-            <?php echo $selected_posts[1] == $post->ID ? 'selected' : '' ?>
-          >
-      			<?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
-          </option>
-      	<?php } ?>
-      </select>
-      <label>Post 3</label>
-      <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
-        <option value="null">Velg post</option>
-        <?php foreach ( $posts as $post ) { ?>
-          <option
-            value="<?php echo $post->ID; ?>"
-            <?php echo $selected_posts[2] == $post->ID ? 'selected' : '' ?>
-          >
-            <?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
-          </option>
+          <optgroup label="<?php print $post['name']; ?>">
+            <?php foreach ($post['posts'] as $p) : ?>
+              <option
+                value="<?php echo $p->ID; ?>"
+                <?php echo $selected_posts[1] == $p->ID ? 'selected' : '' ?>
+              >
+                <?php echo get_the_title( $p->ID ); ?>
+              </option>
+            <?php endforeach; ?>
+          </optgroup>
         <?php } ?>
       </select>
-      <label>Post 4</label>
+      <label>Inlegg 3</label>
       <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
         <option value="null">Velg post</option>
         <?php foreach ( $posts as $post ) { ?>
-      		<option
-      			value="<?php echo $post->ID; ?>"
-            <?php echo $selected_posts[3] == $post->ID ? 'selected' : '' ?>
-          >
-      			<?php echo get_the_title( $post->ID ) . ' ID: ' . $post->ID; ?>
-          </option>
-      	<?php } ?>
+          <optgroup label="<?php print $post['name']; ?>">
+            <?php foreach ($post['posts'] as $p) : ?>
+              <option
+                value="<?php echo $p->ID; ?>"
+                <?php echo $selected_posts[2] == $p->ID ? 'selected' : '' ?>
+              >
+                <?php echo get_the_title( $p->ID ); ?>
+              </option>
+            <?php endforeach; ?>
+          </optgroup>
+        <?php } ?>
+      </select>
+      <label>Inlegg 4</label>
+      <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
+        <option value="null">Velg post</option>
+        <?php foreach ( $posts as $post ) { ?>
+          <optgroup label="<?php print $post['name']; ?>">
+            <?php foreach ($post['posts'] as $p) : ?>
+              <option
+                value="<?php echo $p->ID; ?>"
+                <?php echo $selected_posts[3] == $p->ID ? 'selected' : '' ?>
+              >
+                <?php echo get_the_title( $p->ID ); ?>
+              </option>
+            <?php endforeach; ?>
+          </optgroup>
+        <?php } ?>
       </select>
       	</div>
       	<?php
