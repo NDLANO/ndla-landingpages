@@ -28,7 +28,13 @@
           <div class="ndla-links__mostviewed">
             <h2>Mest brukt</h2>
             <div class="ndla-mostviewed">
-              <?php print_r(ndla_get_most_viewed($page_slug)); ?>
+              <ul>
+                <?php foreach(ndla_get_most_viewed($page_slug) as $post) : ?>
+                  <li>
+                    <a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
             </div>
           </div>
           <div class="ndla-links__guides">

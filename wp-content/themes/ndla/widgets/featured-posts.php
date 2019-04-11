@@ -59,11 +59,6 @@
     }
 
     function form( $instance ) {
-      // Output admin widget options form
-      // 'posts_per_page' => 20,
-      /* $posts = get_posts( array(
-  			'offset' => 0
-  		) ); */
       $selected_posts = ! empty( $instance['selected_posts'] ) ? $instance['selected_posts'] : array();
       // Get all categories
       $args = array(

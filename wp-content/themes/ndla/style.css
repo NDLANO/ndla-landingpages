@@ -9299,7 +9299,7 @@ html.ie #root {
 
 .ndla-breadcrumb {
   flex: 1 0 100%;
-  max-width: 980px;
+  max-width: 1280px;
   position: relative;
   margin: 0 auto 0 auto; }
   .ndla-breadcrumb__item {
@@ -9340,7 +9340,7 @@ html.ie #root {
   position: relative;
   margin: 0 auto 0 auto;
   width: 100%;
-  max-width: 980px;
+  max-width: 1280px;
   box-sizing: border-box; }
 
 .ndla-frontpage__latest, .ndla-frontpage__section {
@@ -9422,18 +9422,6 @@ html.ie #root {
 .ndla-frontpage__guides {
   flex: 1 0 50%; }
 
-.ndla-frontpage__guide {
-  display: inline-block; }
-  .ndla-frontpage__guide a {
-    display: block;
-    padding: 4px 8px 4px 8px;
-    margin-right: 16px;
-    border-radius: 4px;
-    color: #20588f;
-    background-color: #ceddea;
-    text-decoration: none;
-    box-shadow: none; }
-
 .ndla-links {
   display: flex;
   flex-direction: row; }
@@ -9443,6 +9431,17 @@ html.ie #root {
   .ndla-links__mostviewed {
     flex: 1 0 50%;
     padding: 0 13px 0 13px; }
+    .ndla-links__mostviewed li {
+      list-style: none;
+      font-size: 18px;
+      color: #20588f; }
+      .ndla-links__mostviewed li a {
+        text-decoration: underline;
+        box-shadow: none;
+        font-weight: 600; }
+        .ndla-links__mostviewed li a:hover {
+          cursor: pointer;
+          text-decoration: none; }
   .ndla-links__guides {
     flex: 1 0 50%;
     padding: 0 13px 0 13px; }
@@ -9458,19 +9457,22 @@ html.ie #root {
     background-color: #ceddea;
     text-decoration: none;
     box-shadow: none;
-    font-weight: 600; }
+    font-weight: 600;
+    font-size: 18px; }
     .ndla-guide li a:hover {
       background-color: #deebf6; }
 
 .ndla-article {
-  padding: 26px 8% 26px 8%;
+  padding: 5% 8% 5% 8%;
   background: #fff;
-  max-width: 980px;
-  flex: 0 1 980px;
+  width: 100%;
   position: relative;
   margin: 0 auto 0 auto; }
   .ndla-article__content {
-    width: 100%; }
+    width: 100%;
+    max-width: 980px;
+    font-size: 22px;
+    line-height: 1.44; }
   .ndla-article__meta {
     color: #777;
     text-transform: uppercase;
@@ -9487,6 +9489,8 @@ html.ie #root {
       transform: rotate(30deg);
       position: relative;
       top: 2px; }
+  .ndla-article h1, .ndla-article h2, .ndla-article h3, .ndla-article h4, .ndla-article h5, .ndla-article h6 {
+    font-weight: 600; }
 
 .ndla-sidebar {
   flex: 1 0 360px; }
@@ -9686,7 +9690,7 @@ html.ie #root {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.24); }
+      background: rgba(0, 0, 0, 0.32); }
 
 /* ndla-hurtigvalg widget */
 .ndla-shortcuts {
@@ -9716,7 +9720,9 @@ html.ie #root {
   .ndla-welcome__widget .textwidget {
     padding-right: 26px; }
     .ndla-welcome__widget .textwidget p {
-      padding: 0; }
+      padding: 0;
+      font-size: 26px;
+      line-height: 36px; }
   .ndla-welcome p {
     margin: 0;
     font-size: 24px;

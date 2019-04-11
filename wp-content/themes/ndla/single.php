@@ -11,9 +11,6 @@
       <li class="ndla-breadcrumb__item"><a href="<?php echo get_site_url() . '/' . $category->slug; ?>/"><?php echo $category->name; ?></a> <i class="fas fa-chevron-right"></i></li>
       <li class="ndla-breadcrumb__item"><?php the_title(); ?></li>
     </ul>
-    <!-- <aside class="ndla-sidebar">
-      <?php dynamic_sidebar( 'ndla-sidebar' ); ?>
-    </aside> -->
     <?php
     // Start the loop.
     while ( have_posts() ) : the_post();

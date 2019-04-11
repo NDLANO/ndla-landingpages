@@ -90,6 +90,7 @@
                 'term' => $category
     ));
 
+    // return 'Get most viewed for ' . $category;
     return $getPosts;
   }
 

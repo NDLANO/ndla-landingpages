@@ -3,7 +3,7 @@
     position: relative;
     margin: 0 auto 0 auto;
     width: 100%;
-    max-width: 980px;
+    max-width: 1280px;
     box-sizing: border-box;
   }
 
@@ -115,20 +115,6 @@
   &__guides {
     flex: 1 0 50%;
   }
-
-  &__guide {
-    display: inline-block;
-    a {
-      display: block;
-      padding: 4px 8px 4px 8px;
-      margin-right: 16px;
-      border-radius: 4px;
-      color: $brand-color;
-      background-color: $brand-color--light;
-      text-decoration: none;
-      box-shadow: none;
-    }
-  }
 }
 
 .ndla-links {
@@ -141,6 +127,24 @@
   &__mostviewed {
     flex: 1 0 50%;
     padding: 0 $spacing--small 0 $spacing--small;
+    ul {
+
+    }
+
+    li {
+      list-style: none;
+      font-size: 18px;
+      color: $brand-color;
+      a {
+        text-decoration: underline;
+        box-shadow: none;
+        font-weight: 600;
+        &:hover {
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   &__guides {
@@ -163,6 +167,7 @@
       text-decoration: none;
       box-shadow: none;
       font-weight: 600;
+      font-size: 18px;
 
       &:hover {
         background-color: $brand-color--lighter;
