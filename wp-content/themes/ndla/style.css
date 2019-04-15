@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
 Theme Name: NDLA 2019
-Theme URI:
+Theme URI: 
 Author: Keyteq AS
 Author URI: https://keyteq.no
 Description: This is a theme developed for NDLA using custom built widgets and sidebars to achieve this. The theme uses featured-images, custom fields,
@@ -9468,9 +9468,15 @@ html.ie #root {
   width: 100%;
   position: relative;
   margin: 0 auto 0 auto; }
+  .ndla-article__title {
+    max-width: 980px;
+    position: relative;
+    margin: 0 auto 0 auto; }
   .ndla-article__content {
     width: 100%;
     max-width: 980px;
+    position: relative;
+    margin: 0 auto 0 auto;
     font-size: 22px;
     line-height: 1.44; }
   .ndla-article__meta {
@@ -9478,7 +9484,10 @@ html.ie #root {
     text-transform: uppercase;
     font-size: 16px;
     line-height: 18px;
-    margin-bottom: 26px; }
+    margin-bottom: 26px;
+    max-width: 980px;
+    position: relative;
+    margin: 0 auto 26px auto; }
     .ndla-article__meta__seperator {
       margin-left: 6px;
       margin-right: 6px;
@@ -9634,7 +9643,6 @@ html.ie #root {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
-  justify-content: space-around;
   width: 100%;
   position: relative;
   margin: 32.5px auto 0 auto; }
@@ -9642,13 +9650,15 @@ html.ie #root {
     flex: 0 0 50%;
     box-sizing: border-box;
     position: relative;
-    height: 240px;
+    height: 260px;
     overflow: hidden;
     padding: 8px; }
     .ndla-featured__post a {
       display: block;
       height: 100%;
       width: 100%; }
+    .ndla-featured__post--example:hover {
+      cursor: pointer; }
     .ndla-featured__post__title {
       position: absolute;
       z-index: 5;
@@ -9657,16 +9667,18 @@ html.ie #root {
       margin: 0; }
       .ndla-featured__post__title.right {
         text-align: right;
-        right: 26px; }
+        right: 32.5px; }
       .ndla-featured__post__title:not(.right) {
-        left: 26px; }
+        left: 32.5px; }
       .ndla-featured__post__title.bottom {
-        bottom: 32.5px; }
+        bottom: 24.5px; }
       .ndla-featured__post__title:not(.bottom) {
-        top: 32.5px; }
+        top: 24.5px; }
     .ndla-featured__post__image {
-      min-height: 240px;
+      min-height: 260px;
       background: #f9f9f9;
+      background-size: cover;
+      background-position: center center;
       position: absolute;
       margin: 8px;
       top: 0;
@@ -9675,11 +9687,6 @@ html.ie #root {
       bottom: 0;
       z-index: 4;
       overflow: hidden; }
-      .ndla-featured__post__image img {
-        width: 100%;
-        height: auto;
-        transform: scale(1);
-        transition: transform ease 1s; }
     .ndla-featured__post.white .ndla-featured__post__title {
       color: #fff; }
     .ndla-featured__post.white .ndla-featured__post__image:after {

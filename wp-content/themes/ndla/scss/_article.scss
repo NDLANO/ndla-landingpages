@@ -1,3 +1,5 @@
+$articleMaxWidth: 980px;
+
 .ndla-article {
   padding: 5% 8% 5% 8%; //  8% $spacing 8%
   background: #fff;
@@ -7,13 +9,18 @@
   position: relative;
   margin: 0 auto 0 auto;
 
+  &__title {
+    max-width: $articleMaxWidth;
+    position: relative;
+    margin: 0 auto 0 auto;
+  }
   &__content {
     width: 100%;
-    max-width: 980px;
-    // p {
+    max-width: $articleMaxWidth;
+    position: relative;
+    margin: 0 auto 0 auto;
     font-size: 22px;
     line-height: 1.44;
-    // }
   }
 
   &__meta {
@@ -22,6 +29,9 @@
     font-size: 16px;
     line-height: 18px;
     margin-bottom: $spacing;
+    max-width: $articleMaxWidth;
+    position: relative;
+    margin: 0 auto $spacing auto;
 
     &__seperator {
       margin-left: 6px;
@@ -35,7 +45,7 @@
       top: 2px;
     }
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
   }

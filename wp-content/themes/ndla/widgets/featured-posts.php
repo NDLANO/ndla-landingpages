@@ -28,12 +28,11 @@
     	if( ! empty( $instance['selected_posts'] ) && is_array( $instance['selected_posts'] ) ){
     		$selected_posts = get_posts( array( 'post__in' => $instance['selected_posts'] ) );
     		?>
+
       <?php foreach($selected_posts as $key=>$post) : setup_postdata($post) ?>
         <div class="ndla-featured__post <?php echo get_field('white')[0]; ?>">
           <a href="<?php echo get_permalink($post->ID) ?>">
-            <div class="ndla-featured__post__image">
-              <?php print the_post_thumbnail( 'medium_large' ); ?>
-            </div>
+            <div class="ndla-featured__post__image" style="background-image: url('<?php print the_post_thumbnail_url( 'medium_large' ); ?>')"></div>
             <h2 class="ndla-featured__post__title <?php echo $headerPositionClass[$key]; ?>">
               <?php echo $post->post_title; ?>
             </h2>
@@ -41,9 +40,26 @@
         </div>
       <?php endforeach ?>
     		<?php
-    	}else {
-    		echo esc_html__( 'No posts selected!', 'text_domain' );
-    	}
+    	}else { ?>
+        <?php if (current_user_can('editor') || current_user_can('administrator')) : ?>
+    	   <div class="ndla-featured__post ndla-featured__post--example">
+           <p>Utvalde inlegg. Klikk + shift for å redigere</p>
+           <div class="ndla-featured__post__image"></div>
+         </div>
+         <div class="ndla-featured__post ndla-featured__post--example">
+           <p>Utvalde inlegg. Klikk + shift for å redigere</p>
+           <div class="ndla-featured__post__image"></div>
+         </div>
+         <div class="ndla-featured__post ndla-featured__post--example">
+           <p>Utvalde inlegg. Klikk + shift for å redigere</p>
+           <div class="ndla-featured__post__image"></div>
+         </div>
+         <div class="ndla-featured__post ndla-featured__post--example">
+           <p>Utvalde inlegg. Klikk + shift for å redigere</p>
+           <div class="ndla-featured__post__image"></div>
+         </div>
+       <?php endif; ?>
+    	<?php }
 
     	echo $args['after_widget'];
     }
