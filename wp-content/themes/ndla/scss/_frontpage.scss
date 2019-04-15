@@ -7,6 +7,10 @@
     box-sizing: border-box;
   }
 
+  &__flexcontent {
+    flex: 1;
+  }
+
   &__latest, &__section {
     display: flex;
     flex-direction: row;

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
 Theme Name: NDLA 2019
-Theme URI: 
+Theme URI:
 Author: Keyteq AS
 Author URI: https://keyteq.no
 Description: This is a theme developed for NDLA using custom built widgets and sidebars to achieve this. The theme uses featured-images, custom fields,
@@ -9324,17 +9324,17 @@ html.ie #root {
       margin-right: 8px;
       display: inline-block; }
 
-.ndla-header__title a {
-  text-decoration: none;
-  box-shadow: none; }
-
-.ndla-header__title img {
-  width: 120px;
-  height: auto; }
-
-.ndla-header__title__alt {
-  display: none;
-  visibility: hidden; }
+.ndla-header {
+  padding: 26px; }
+  .ndla-header__title a {
+    text-decoration: none;
+    box-shadow: none; }
+  .ndla-header__title img {
+    width: 120px;
+    height: auto; }
+  .ndla-header__title__alt {
+    display: none;
+    visibility: hidden; }
 
 .ndla-frontpage__content {
   position: relative;
@@ -9342,6 +9342,9 @@ html.ie #root {
   width: 100%;
   max-width: 1280px;
   box-sizing: border-box; }
+
+.ndla-frontpage__flexcontent {
+  flex: 1; }
 
 .ndla-frontpage__latest, .ndla-frontpage__section {
   display: flex;
@@ -9466,12 +9469,25 @@ html.ie #root {
   padding: 5% 8% 5% 8%;
   background: #fff;
   width: 100%;
+  flex: 0 1 1280px;
   position: relative;
   margin: 0 auto 0 auto; }
+  .ndla-article--flex {
+    width: auto; }
+  .ndla-article__readmore i {
+    margin-left: 2px;
+    font-size: 12px; }
+  .ndla-article__featuredimg {
+    width: 100%;
+    height: auto; }
+  .ndla-article__link {
+    color: #444; }
+    .ndla-article__link:hover {
+      color: #20588f; }
   .ndla-article__title {
     max-width: 980px;
     position: relative;
-    margin: 0 auto 0 auto; }
+    margin: 0 auto 8px auto; }
   .ndla-article__content {
     width: 100%;
     max-width: 980px;
@@ -9502,9 +9518,11 @@ html.ie #root {
     font-weight: 600; }
 
 .ndla-sidebar {
-  flex: 1 0 360px; }
+  flex: 0 1 360px; }
   .ndla-sidebar__widget {
-    padding-bottom: 24px; }
+    padding: 26px;
+    background: #fff;
+    margin-bottom: 24px; }
     .ndla-sidebar__widget:first-child {
       border-bottom: none; }
     .ndla-sidebar__widget:last-child {
@@ -9512,9 +9530,7 @@ html.ie #root {
     .ndla-sidebar__widget__title {
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 22px;
-      margin-left: 26px;
-      margin-right: 26px; }
+      font-size: 22px; }
     .ndla-sidebar__widget ul {
       margin: 26px; }
     .ndla-sidebar__widget li {
@@ -9747,7 +9763,12 @@ body {
   body.admin-bar {
     padding-bottom: 32px; }
   body.home {
-    background-color: #fff; }
+    background-color: #20588f; }
+    body.home .ndla-header {
+      background-color: #fff;
+      margin-bottom: 26px; }
+    body.home .ndla-sidebar {
+      margin-left: 16px; }
 
 h1 {
   font-weight: 400; }

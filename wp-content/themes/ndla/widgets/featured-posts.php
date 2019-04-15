@@ -102,6 +102,9 @@
         }
       ?>
       <div>
+        <pre>
+          <?php // print_r($selected_posts); ?>
+        </pre>
         <!-- Post 1 -->
         <label>Inlegg 1</label>
         <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">

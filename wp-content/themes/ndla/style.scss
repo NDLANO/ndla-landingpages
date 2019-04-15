@@ -1,6 +1,6 @@
 /*
 Theme Name: NDLA 2019
-Theme URI: 
+Theme URI:
 Author: Keyteq AS
 Author URI: https://keyteq.no
 Description: This is a theme developed for NDLA using custom built widgets and sidebars to achieve this. The theme uses featured-images, custom fields,
@@ -37,7 +37,17 @@ body {
   }
 
   &.home {
-    background-color: #fff;
+    background-color: $brand-color;
+
+    .ndla-header {
+      background-color: $white;
+      margin-bottom: $spacing;
+    }
+
+    .ndla-sidebar {
+      // background-color: $white;
+      margin-left: 16px;
+    }
   }
 }
 

@@ -4,15 +4,39 @@ $articleMaxWidth: 980px;
   padding: 5% 8% 5% 8%; //  8% $spacing 8%
   background: #fff;
   width: 100%;
-  // flex: 0 1 1080px;
+  flex: 0 1 1280px;
   // max-width: 1280px;
   position: relative;
   margin: 0 auto 0 auto;
 
+  &--flex {
+    width: auto;
+  }
+
+  &__readmore {
+    i {
+      margin-left: 2px;
+      font-size: 12px;
+    }
+  }
+
+  &__featuredimg {
+    width: 100%;
+    height: auto;
+  }
+
+  &__link {
+    color: #444;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
+
   &__title {
     max-width: $articleMaxWidth;
     position: relative;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 8px auto;
   }
   &__content {
     width: 100%;

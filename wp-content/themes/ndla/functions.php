@@ -54,6 +54,20 @@
     );
   }
 
+  function ndla_frontpage_sidebar() {
+    register_sidebar(
+      array (
+          'name' => __( 'Sidebar Widget', 'ndla2019' ),
+          'id' => 'ndla-frontpage-sidebar',
+          'description' => __( 'Sidemeny fagblogg', 'ndla-theme' ),
+          'before_widget' => '<div class="ndla-sidebar__widget">',
+          'after_widget' => "</div>",
+          'before_title' => '<h3 class="ndla-sidebar__widget__title">',
+          'after_title' => '</h3>',
+      )
+    );
+  }
+
   /* Function for determining if page is landing page */
   function ndla_is_landing_page($categories) {
     if ($categories) {
@@ -96,5 +110,6 @@
 
   /* Widget for welcome widget for pages */
   add_action( 'widgets_init', 'ndla_sidebar' );
+  add_action ( 'widgets_init', 'ndla_frontpage_sidebar');
   // add_action( 'widgets_init', 'register_shortcuts' );
 ?>
