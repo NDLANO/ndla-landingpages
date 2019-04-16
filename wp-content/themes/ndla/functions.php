@@ -20,7 +20,7 @@
   add_theme_support( 'responsive-embeds' );
   // Add support for thumbnails
   add_theme_support( 'post-thumbnails' );
-
+  add_theme_support( 'customize-selective-refresh-widgets' );
   /*
    * Set post views count using post meta
    */
@@ -84,7 +84,7 @@
     // return 'Get most viewed for ' . $category;
     return $getPosts;
   }
-  
+
   /* Function for determining if page is landing page */
   function ndla_is_landing_page($categories) {
     if ($categories) {
