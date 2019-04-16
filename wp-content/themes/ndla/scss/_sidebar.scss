@@ -21,15 +21,43 @@
       text-transform: uppercase;
       font-weight: 700;
       font-size: 22px;
+      margin-top: 0;
       // margin-left: $spacing;
       // margin-right: $spacing;
     }
+
+    h2 {
+      margin-top: 0;
+    }
+
     ul {
       margin: 0;
       // margin: $spacing;
     }
     li {
       list-style: none;
+    }
+
+    .menu {
+      margin-top: 18px;
+    }
+
+    // Styling for social media things
+    .jetpack-social-widget-list {
+      svg {
+        width: 32px;
+        height: 32px;
+        fill: currentColor;
+      }
+
+      .jetpack-social-widget-item {
+        display: inline-block;
+      }
+
+      a {
+        color: $brand-color;
+        box-shadow: none;
+      }
     }
   }
 
@@ -108,5 +136,4 @@
     }
   }
   // End of search form styling
-
 }

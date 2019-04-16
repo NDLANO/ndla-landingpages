@@ -9535,11 +9535,25 @@ html.ie #root {
     .ndla-sidebar__widget__title {
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 22px; }
+      font-size: 22px;
+      margin-top: 0; }
+    .ndla-sidebar__widget h2 {
+      margin-top: 0; }
     .ndla-sidebar__widget ul {
       margin: 0; }
     .ndla-sidebar__widget li {
       list-style: none; }
+    .ndla-sidebar__widget .menu {
+      margin-top: 18px; }
+    .ndla-sidebar__widget .jetpack-social-widget-list svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor; }
+    .ndla-sidebar__widget .jetpack-social-widget-list .jetpack-social-widget-item {
+      display: inline-block; }
+    .ndla-sidebar__widget .jetpack-social-widget-list a {
+      color: #20588f;
+      box-shadow: none; }
   .ndla-sidebar .menu-hovedmeny-container {
     background-color: #deebf6;
     border-radius: 4px 0 0 4px;
