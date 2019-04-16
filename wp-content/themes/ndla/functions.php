@@ -68,6 +68,23 @@
     );
   }
 
+  /*  Function for getting the most viewed posts for a category */
+  function ndla_get_most_viewed($category) {
+    // $mostViewed = query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC');
+    $getPosts = get_posts(array(
+      'numberposts' => 4,
+      'post_type' => 'post',
+      'meta_key' => 'post_views_count',
+      'order_by' => 'meta_value_num',
+      'taxonomy' => 'category',
+                'field' => 'slug',
+                'term' => $category
+    ));
+
+    // return 'Get most viewed for ' . $category;
+    return $getPosts;
+  }
+  
   /* Function for determining if page is landing page */
   function ndla_is_landing_page($categories) {
     if ($categories) {
@@ -91,22 +108,6 @@
     return $categories;
   }
 
-  /*  Function for getting the most viewed posts for a category */
-  function ndla_get_most_viewed($category) {
-    // $mostViewed = query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC');
-    $getPosts = get_posts(array(
-      'numberposts' => 4,
-      'post_type' => 'post',
-      'meta_key' => 'post_views_count',
-      'order_by' => 'meta_value_num',
-      'taxonomy' => 'category',
-                'field' => 'slug',
-                'term' => $category
-    ));
-
-    // return 'Get most viewed for ' . $category;
-    return $getPosts;
-  }
 
   /* Widget for welcome widget for pages */
   add_action( 'widgets_init', 'ndla_sidebar' );

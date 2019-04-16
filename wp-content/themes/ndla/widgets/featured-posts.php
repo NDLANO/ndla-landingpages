@@ -21,16 +21,16 @@
       $headerPositionClass = array('left top', 'right top', 'left bottom', 'right bottom');
       // Widget output
       echo $args['before_widget'];
-    	if ( ! empty( $instance['title'] ) ) {
-    		echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-    	}
 
     	if( ! empty( $instance['selected_posts'] ) && is_array( $instance['selected_posts'] ) ){
-    		$selected_posts = get_posts( array( 'post__in' => $instance['selected_posts'] ) );
-    		?>
+    		$selected_posts = get_posts( array( 'post__in' => $instance['selected_posts'], 'orderby' => 'post__in' ) );
 
+      if (! empty ( $instance['post_styling'] ) && is_array( $instance['post_styling']  ) ) {
+        $post_styling = $instance['post_styling'];
+      }
+      ?>
       <?php foreach($selected_posts as $key=>$post) : setup_postdata($post) ?>
-        <div class="ndla-featured__post <?php echo get_field('white')[0]; ?>">
+        <div class="ndla-featured__post <?php echo $post_styling[$key]; ?>">
           <a href="<?php echo get_permalink($post->ID) ?>">
             <div class="ndla-featured__post__image" style="background-image: url('<?php print the_post_thumbnail_url( 'medium_large' ); ?>')"></div>
             <h2 class="ndla-featured__post__title <?php echo $headerPositionClass[$key]; ?>">
@@ -66,16 +66,19 @@
 
     function update( $new_instance, $old_instance ) {
       $instance = array();
-    	$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 
     	$selected_posts = ( ! empty ( $new_instance['selected_posts'] ) ) ? (array) $new_instance['selected_posts'] : array();
     	$instance['selected_posts'] = array_map( 'sanitize_text_field', $selected_posts );
+
+      $post_styling = ( ! empty ( $new_instance['post_styling'] ) ) ? (array) $new_instance['post_styling'] : array();
+    	$instance['post_styling'] = array_map( 'sanitize_text_field', $post_styling );
 
     	return $instance;
     }
 
     function form( $instance ) {
       $selected_posts = ! empty( $instance['selected_posts'] ) ? $instance['selected_posts'] : array();
+      $post_styling = ! empty( $instance['post_styling'] ) ? $instance['post_styling'] : array();
       // Get all categories
       $args = array(
         'post_type' => 'page',
@@ -102,9 +105,9 @@
         }
       ?>
       <div>
-        <pre>
-          <?php // print_r($selected_posts); ?>
-        </pre>
+        <!-- <pre>
+          <?php print_r($instance); ?>
+        </pre> -->
         <!-- Post 1 -->
         <label>Inlegg 1</label>
         <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
@@ -122,6 +125,15 @@
             </optgroup>
         	<?php } ?>
         </select>
+        <div>
+          <label>Titelfaerge</label>
+          <select name="<?php echo esc_attr( $this->get_field_name( 'post_styling' )); ?>[]?>">
+            <option value="default">Standard</option>
+            <option value="white" <?php echo $post_styling[0] == 'white' ? 'selected' : ''; ?>>Hvit</option>
+            <option value="black" <?php echo $post_styling[0] == 'black' ? 'selected' : ''; ?>>Svart</option>
+          </select>
+        </div>
+        <hr />
       <!-- Post 2 -->
       <label>Inlegg 2</label>
       <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
@@ -139,6 +151,16 @@
           </optgroup>
         <?php } ?>
       </select>
+      <div>
+        <label>Titelfaerge</label>
+        <select name="<?php echo esc_attr( $this->get_field_name( 'post_styling' )); ?>[]?>">
+          <option value="default">Standard</option>
+          <option value="white" <?php echo $post_styling[1] == 'white' ? 'selected' : ''; ?>>Hvit</option>
+          <option value="black" <?php echo $post_styling[1] == 'black' ? 'selected' : ''; ?>>Svart</option>
+        </select>
+      </div>
+      <hr />
+      <!-- Post 3 -->
       <label>Inlegg 3</label>
       <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
         <option value="null">Velg post</option>
@@ -155,6 +177,16 @@
           </optgroup>
         <?php } ?>
       </select>
+      <div>
+        <label>Titelfaerge</label>
+        <select name="<?php echo esc_attr( $this->get_field_name( 'post_styling' )); ?>[]?>">
+          <option value="default">Standard</option>
+          <option value="white" <?php echo $post_styling[2] == 'white' ? 'selected' : ''; ?>>Hvit</option>
+          <option value="black" <?php echo $post_styling[2] == 'black' ? 'selected' : ''; ?>>Svart</option>
+        </select>
+      </div>
+      <hr />
+      <!-- Post 4 -->
       <label>Inlegg 4</label>
       <select name="<?php echo esc_attr( $this->get_field_name( 'selected_posts' ) ); ?>[]">
         <option value="null">Velg post</option>
@@ -171,7 +203,16 @@
           </optgroup>
         <?php } ?>
       </select>
-      	</div>
+      <div>
+        <label>Titelfaerge</label>
+        <select name="<?php echo esc_attr( $this->get_field_name( 'post_styling' )); ?>[]?>">
+          <option value="default">Standard</option>
+          <option value="white" <?php echo $post_styling[3] == 'white' ? 'selected' : ''; ?>>Hvit</option>
+          <option value="black" <?php echo $post_styling[3] == 'black' ? 'selected' : ''; ?>>Svart</option>
+        </select>
+      </div>
+      <hr />
+      </div>
       	<?php
     }
   }

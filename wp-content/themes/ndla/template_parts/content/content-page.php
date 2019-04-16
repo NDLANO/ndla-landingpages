@@ -25,20 +25,12 @@
           <?php dynamic_sidebar('ndla-featured-' . $page_slug); ?>
         </div>
         <div class="ndla-links">
-          <div class="ndla-links__mostviewed">
-            <h2>Mest brukt</h2>
-            <div class="ndla-mostviewed">
-              <ul>
-                <?php foreach(ndla_get_most_viewed($page_slug) as $post) : ?>
-                  <li>
-                    <a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          </div>
           <div class="ndla-links__guides">
-            <?php dynamic_sidebar('ndla-guide-' . $page_slug); ?>
+              <?php dynamic_sidebar('ndla-bottom-left-' . $page_slug); ?>
+            </div>
+            <div class="ndla-links__guides">
+              <?php dynamic_sidebar('ndla-guide-' . $page_slug); ?>
+            </div>
           </div>
         </div>
       <!-- End of landing page -->

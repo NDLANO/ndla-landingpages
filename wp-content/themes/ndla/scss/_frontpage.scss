@@ -128,6 +128,7 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+
   &__mostviewed {
     flex: 1 0 50%;
     padding: 0 $spacing--small 0 $spacing--small;
@@ -154,8 +155,16 @@
   &__guides {
     flex: 1 0 50%;
     padding: 0 $spacing--small 0 $spacing--small;
-  }
+    box-sizing: border-box;
 
+    ul {
+      list-style: none;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
 }
 
 .ndla-guide {
