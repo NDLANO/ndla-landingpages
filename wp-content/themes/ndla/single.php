@@ -4,11 +4,12 @@
   $postID = $wp_query->post->ID;
   $postCategories = wp_get_post_categories($postID);
   $category = get_category($postCategories[0]);
+  $urlpath = $category->slug == 'fagblogg' ? '' : $category->slug . '/';
 ?>
 <div id="primary" class="ndla-content-area">
   <main id="main" class="ndla-main" role="main">
     <ul class="ndla-breadcrumb">
-      <li class="ndla-breadcrumb__item"><a href="<?php echo get_site_url() . '/' . $category->slug; ?>/"><?php echo $category->name; ?></a> <i class="fas fa-chevron-right"></i></li>
+      <li class="ndla-breadcrumb__item"><a href="<?php echo get_site_url() . '/' . $urlpath ?>"><?php echo $category->name; ?></a> <i class="fas fa-chevron-right"></i></li>
       <li class="ndla-breadcrumb__item"><?php the_title(); ?></li>
     </ul>
     <?php

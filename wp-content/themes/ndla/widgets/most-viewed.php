@@ -5,19 +5,6 @@
   Author: Robert Fohlin
   Version: 1.0
   Author URI: http://fohlin.io */
-
-  /*
-    <div class="ndla-links__mostviewed">
-      <div class="ndla-mostviewed">
-        <ul>
-          <?php foreach(ndla_get_most_viewed($page_slug) as $post) : ?>
-            <li>
-              <a href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-      </div>
-  */
   class MostViewedPostsWidget extends WP_Widget {
     function __construct() {
       $widget_ops = array(

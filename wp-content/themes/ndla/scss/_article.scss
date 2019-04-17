@@ -9,6 +9,10 @@ $articleMaxWidth: 980px;
   position: relative;
   margin: 0 auto 0 auto;
 
+  a {
+    color: $brand-color;
+  }
+
   &--flex {
     width: auto;
   }

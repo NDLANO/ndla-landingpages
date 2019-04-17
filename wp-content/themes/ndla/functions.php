@@ -20,7 +20,10 @@
   add_theme_support( 'responsive-embeds' );
   // Add support for thumbnails
   add_theme_support( 'post-thumbnails' );
+  // Edit buttons for widgets
   add_theme_support( 'customize-selective-refresh-widgets' );
+  // Enable automatic feed links
+  add_theme_support( 'automatic-feed-links' );
   /*
    * Set post views count using post meta
    */
@@ -110,7 +113,13 @@
 
 
   /* Widget for welcome widget for pages */
-  add_action( 'widgets_init', 'ndla_sidebar' );
+  // add_action( 'widgets_init', 'ndla_sidebar' );
   add_action ( 'widgets_init', 'ndla_frontpage_sidebar');
   // add_action( 'widgets_init', 'register_shortcuts' );
+  // load jquery
+  // wp_enqueue_script("jquery");
+  function theme_slug_setup() {
+     add_theme_support( 'title-tag' );
+  }
+  add_action( 'after_setup_theme', 'theme_slug_setup' );
 ?>

@@ -5,7 +5,7 @@ Theme URI:
 Author: Keyteq AS
 Author URI: https://keyteq.no
 Description: This is a theme developed for NDLA using custom built widgets and sidebars to achieve this. The theme uses featured-images, custom fields,
-Version: 1.01
+Version: 1.03
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ndla
@@ -9477,6 +9477,8 @@ html.ie #root {
   flex: 0 1 1280px;
   position: relative;
   margin: 0 auto 0 auto; }
+  .ndla-article a {
+    color: #20588f; }
   .ndla-article--flex {
     width: auto; }
   .ndla-article__readmore i {
@@ -9543,6 +9545,9 @@ html.ie #root {
       margin: 0; }
     .ndla-sidebar__widget li {
       list-style: none; }
+    .ndla-sidebar__widget a {
+      color: #20588f;
+      box-shadow: none; }
     .ndla-sidebar__widget .menu {
       margin-top: 18px; }
     .ndla-sidebar__widget .jetpack-social-widget-list svg {
@@ -9778,8 +9783,8 @@ html.ie #root {
   text-transform: uppercase;
   font-weight: 700; }
 
-html {
-  overflow: hidden; }
+.ndla-widget a {
+  color: #20588f; }
 
 body {
   background-color: #f8f8f8; }

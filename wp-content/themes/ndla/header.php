@@ -1,11 +1,19 @@
 <?php
 ?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
-  <title><?php bloginfo('description'); ?></title>
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+  <title>
+		<?php if(is_front_page() || is_home()){
+        echo get_bloginfo('name') . ' - ' . get_bloginfo('description') ;
+    } else{
+        echo wp_title('');
+    }?>
+	</title>
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<?php wp_head(); ?>
