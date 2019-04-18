@@ -119,11 +119,34 @@
   &__guides {
     flex: 1 0 50%;
   }
+
+  &__pagination {
+    display: flex;
+    color: #fff;
+
+    &__item {
+      flex: 1 0 50%;
+
+      &--right {
+        align-self: flex-end;
+        text-align: right;
+      }
+    }
+    a {
+      color: #fff;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .ndla-links {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   h2 {
     text-transform: uppercase;
     font-weight: 700;
@@ -133,7 +156,6 @@
     flex: 1 0 50%;
     padding: 0 $spacing--small 0 $spacing--small;
     ul {
-
     }
 
     li {
@@ -153,12 +175,22 @@
   }
 
   &__guides {
-    flex: 1 0 50%;
     padding: 0 $spacing--small 0 $spacing--small;
     box-sizing: border-box;
+    /*
+      Responsive styling
+    */
+    @media screen and (max-width: 620px) {
+      flex: 1 0 100%;
+    }
 
+    @media screen and (min-width: 621px) {
+      flex: 0 0 50%;
+    }
     ul {
       list-style: none;
+      padding-left: 0;
+      margin-left: 0;
     }
 
     li {

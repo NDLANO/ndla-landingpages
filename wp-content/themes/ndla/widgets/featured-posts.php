@@ -13,7 +13,7 @@
     		'description' => 'Widget for utvalde inlegg for landingside',
     	);
       // Instantiate the parent object
-      parent::__construct( false, 'Utvalde inlegg landingside', $widget_ops );
+      parent::__construct( false, 'Utvalde inlegg', $widget_ops );
     }
 
     function widget( $args, $instance ) {
@@ -29,10 +29,9 @@
         $post_styling = $instance['post_styling'];
       }
 
-      if (! empty ( $instance['selected_categories'] ) && is_array( $instance['selected_categories']  ) ) {
-        $selected_categories = $instance['selected_categories'];
-      }
-
+      /* print '<pre style="flex: 1 0 100%;">';
+      print_r($instance['selected_categories']);
+      print '</pre>'; */
       ?>
       <?php foreach($selected_posts as $key=>$post) : setup_postdata($post) ?>
         <div class="ndla-featured__post <?php echo $post_styling[$key]; ?>">
@@ -70,7 +69,7 @@
     }
 
     function update( $new_instance, $old_instance ) {
-      $instance = array();
+      $instance = old_instance();
 
     	$selected_posts = ( ! empty ( $new_instance['selected_posts'] ) ) ? (array) $new_instance['selected_posts'] : array();
     	$instance['selected_posts'] = array_map( 'sanitize_text_field', $selected_posts );
@@ -97,6 +96,9 @@
       $categories = get_categories();
       $postTypeLabels = array('post' => 'Inlegg', 'page' => 'Side');
       ?>
+      <!-- <pre>
+        <?php print_r($selected_categories); ?>
+      </pre> -->
       <div> <!-- Outer div wrapper -->
         <!-- Loop to create all post selects -->
         <?php for($i = 0; $i < $maxnrofposts; $i++) : ?>

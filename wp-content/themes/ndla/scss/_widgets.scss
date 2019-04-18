@@ -15,6 +15,14 @@
   max-width: 980px;
   position: relative;
   margin: 0 auto 0 auto;
+  /* Responsive styling */
+  @media screen and (max-width: 620px) {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 621px) {
+    flex-wrap: nowrap;
+  }
 
   &__title {
     margin: 0;
@@ -25,10 +33,19 @@
   }
 
   &__widget.widget_media_image {
-    flex: 0 1 auto;
     // margin: 8px;
     // margin-right: $spacing;
     box-sizing: border-box;
+    /*
+      Responsive styling
+    */
+    @media screen and (max-width: 620px) {
+      flex: 1 0 100%;
+    }
+
+    @media screen and (min-width: 621px) {
+      flex: 0 1 auto;
+    }
   }
 
   &__widget {

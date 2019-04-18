@@ -60,7 +60,7 @@
   function ndla_frontpage_sidebar() {
     register_sidebar(
       array (
-          'name' => __( 'Sidebar Widget', 'ndla2019' ),
+          'name' => __( '[Framside] Sidebar', 'ndla2019' ),
           'id' => 'ndla-frontpage-sidebar',
           'description' => __( 'Sidemeny fagblogg', 'ndla-theme' ),
           'before_widget' => '<div class="ndla-sidebar__widget">',
@@ -111,6 +111,13 @@
     return $categories;
   }
 
+  add_action('pre_get_posts','homepage_queries');
+  function homepage_queries( $query ) {
+     // && !is_admin() $query->is_main_query() && !$query->is_feed()
+    if( is_home() && $query->is_main_query() && !is_admin() ) {
+      $query->set( 'paged',  get_query_var( 'page' ) ); // str_replace( '/', '', get_query_var( 'page' ) )
+    }
+  }
 
   /* Widget for welcome widget for pages */
   // add_action( 'widgets_init', 'ndla_sidebar' );

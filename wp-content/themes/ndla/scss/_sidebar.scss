@@ -1,8 +1,17 @@
 .ndla-sidebar {
-  flex: 0 1 360px;
   // margin-right: $spacing;
   // border-radius: 4px;
+  /*
+    Responsive styling
+  */
+  @media screen and (max-width: 820px) {
+    flex: 1 0 100%;
+    margin-top: $spacing;
+  }
 
+  @media screen and (min-width: 821px) {
+    flex: 0 1 360px;
+  }
   &__widget {
     // border-bottom: 2px solid #eaeaea;
     padding: $spacing;
@@ -32,6 +41,7 @@
 
     ul {
       margin: 0;
+      padding-left: 0;
       // margin: $spacing;
     }
     li {

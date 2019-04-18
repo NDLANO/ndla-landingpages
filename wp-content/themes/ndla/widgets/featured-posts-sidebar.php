@@ -3,7 +3,7 @@
   function register_featured_posts($name, $slug, $description) {
     register_sidebar(
       array(
-        'name'          => __( 'Utvalde inlegg "' . $name . '"', 'ndla2019' ),
+        'name'          => __( '[' . $name . '] Utvalde inlegg', 'ndla2019' ),
         'id'            => 'ndla-featured-' . $slug,
         'class'         => 'ndla-featured',
         'description'   => __( $description, 'ndla2019' ),

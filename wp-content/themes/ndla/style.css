@@ -9289,9 +9289,14 @@ html.ie #root {
 .ndla-main {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 100%;
-  width: 1280px; }
+  flex-wrap: wrap; }
+  @media screen and (max-width: 820px) {
+    .ndla-main {
+      width: 100%; } }
+  @media screen and (min-width: 821px) {
+    .ndla-main {
+      width: 100%;
+      max-width: 1280px; } }
   .ndla-main--column {
     flex-direction: column;
     position: relative;
@@ -9425,9 +9430,24 @@ html.ie #root {
 .ndla-frontpage__guides {
   flex: 1 0 50%; }
 
+.ndla-frontpage__pagination {
+  display: flex;
+  color: #fff; }
+  .ndla-frontpage__pagination__item {
+    flex: 1 0 50%; }
+    .ndla-frontpage__pagination__item--right {
+      align-self: flex-end;
+      text-align: right; }
+  .ndla-frontpage__pagination a {
+    color: #fff; }
+    .ndla-frontpage__pagination a:hover {
+      color: inherit;
+      text-decoration: none; }
+
 .ndla-links {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  flex-wrap: wrap; }
   .ndla-links h2 {
     text-transform: uppercase;
     font-weight: 700; }
@@ -9446,11 +9466,21 @@ html.ie #root {
           cursor: pointer;
           text-decoration: none; }
   .ndla-links__guides {
-    flex: 1 0 50%;
     padding: 0 13px 0 13px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    /*
+      Responsive styling
+    */ }
+    @media screen and (max-width: 620px) {
+      .ndla-links__guides {
+        flex: 1 0 100%; } }
+    @media screen and (min-width: 621px) {
+      .ndla-links__guides {
+        flex: 0 0 50%; } }
     .ndla-links__guides ul {
-      list-style: none; }
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0; }
     .ndla-links__guides li {
       list-style: none; }
 
@@ -9474,9 +9504,17 @@ html.ie #root {
   padding: 5% 8% 5% 8%;
   background: #fff;
   width: 100%;
-  flex: 0 1 1280px;
   position: relative;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 0 auto;
+  /*
+    Responsive styling
+  */ }
+  @media screen and (max-width: 820px) {
+    .ndla-article {
+      flex: 1 0 100%; } }
+  @media screen and (min-width: 821px) {
+    .ndla-article {
+      flex: 0 1 1280px; } }
   .ndla-article a {
     color: #20588f; }
   .ndla-article--flex {
@@ -9525,7 +9563,16 @@ html.ie #root {
     font-weight: 600; }
 
 .ndla-sidebar {
-  flex: 0 1 360px; }
+  /*
+    Responsive styling
+  */ }
+  @media screen and (max-width: 820px) {
+    .ndla-sidebar {
+      flex: 1 0 100%;
+      margin-top: 26px; } }
+  @media screen and (min-width: 821px) {
+    .ndla-sidebar {
+      flex: 0 1 360px; } }
   .ndla-sidebar__widget {
     padding: 26px;
     background: #fff;
@@ -9542,7 +9589,8 @@ html.ie #root {
     .ndla-sidebar__widget h2 {
       margin-top: 0; }
     .ndla-sidebar__widget ul {
-      margin: 0; }
+      margin: 0;
+      padding-left: 0; }
     .ndla-sidebar__widget li {
       list-style: none; }
     .ndla-sidebar__widget a {
@@ -9687,12 +9735,20 @@ html.ie #root {
   position: relative;
   margin: 32.5px auto 0 auto; }
   .ndla-featured__post {
-    flex: 0 0 50%;
     box-sizing: border-box;
     position: relative;
     height: 260px;
     overflow: hidden;
-    padding: 8px; }
+    padding: 8px;
+    /*
+      Responsive styling
+    */ }
+    @media screen and (max-width: 620px) {
+      .ndla-featured__post {
+        flex: 1 0 100%; } }
+    @media screen and (min-width: 621px) {
+      .ndla-featured__post {
+        flex: 0 0 50%; } }
     .ndla-featured__post a {
       display: block;
       height: 100%;
@@ -9704,16 +9760,22 @@ html.ie #root {
       z-index: 5;
       max-width: 67%;
       color: #444;
-      margin: 0; }
-      .ndla-featured__post__title.right {
-        text-align: right;
-        right: 32.5px; }
-      .ndla-featured__post__title:not(.right) {
-        left: 32.5px; }
-      .ndla-featured__post__title.bottom {
-        bottom: 24.5px; }
-      .ndla-featured__post__title:not(.bottom) {
-        top: 24.5px; }
+      margin: 0;
+      /* Responsive styling */ }
+      @media screen and (max-width: 620px) {
+        .ndla-featured__post__title {
+          bottom: 24.5px;
+          left: 32.5px; } }
+      @media screen and (min-width: 621px) {
+        .ndla-featured__post__title.right {
+          text-align: right;
+          right: 32.5px; }
+        .ndla-featured__post__title:not(.right) {
+          left: 32.5px; }
+        .ndla-featured__post__title.bottom {
+          bottom: 24.5px; }
+        .ndla-featured__post__title:not(.bottom) {
+          top: 24.5px; } }
     .ndla-featured__post__image {
       min-height: 260px;
       background: #f9f9f9;
@@ -9752,7 +9814,14 @@ html.ie #root {
   flex-wrap: nowrap;
   max-width: 980px;
   position: relative;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 0 auto;
+  /* Responsive styling */ }
+  @media screen and (max-width: 620px) {
+    .ndla-welcome {
+      flex-wrap: wrap; } }
+  @media screen and (min-width: 621px) {
+    .ndla-welcome {
+      flex-wrap: nowrap; } }
   .ndla-welcome__title {
     margin: 0;
     font-size: 36px;
@@ -9760,8 +9829,16 @@ html.ie #root {
     box-sizing: border-box;
     flex: 1 0 140px; }
   .ndla-welcome__widget.widget_media_image {
-    flex: 0 1 auto;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    /*
+      Responsive styling
+    */ }
+    @media screen and (max-width: 620px) {
+      .ndla-welcome__widget.widget_media_image {
+        flex: 1 0 100%; } }
+    @media screen and (min-width: 621px) {
+      .ndla-welcome__widget.widget_media_image {
+        flex: 0 1 auto; } }
   .ndla-welcome__widget.widget_text {
     flex: 1 0 67%; }
   .ndla-welcome__widget .textwidget {
@@ -9795,8 +9872,9 @@ body {
     body.home .ndla-header {
       background-color: #fff;
       margin-bottom: 26px; }
-    body.home .ndla-sidebar {
-      margin-left: 16px; }
+    @media screen and (min-width: 821px) {
+      body.home .ndla-sidebar {
+        margin-left: 16px; } }
 
 h1 {
   font-weight: 400; }

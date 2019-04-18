@@ -2,8 +2,8 @@
   function register_page_guide($name, $slug, $description) {
     register_sidebar(
       array(
-        'name'          => __( 'Hurtigvalg for ' . $name, 'ndla2019' ),
-        'id'            => 'ndla-guide-' . $slug,
+        'name'          => __( '[' . $name . '] Høyre nedre widget', 'ndla2019' ),
+        'id'            => 'ndla-bottom-right-' . $slug,
         'class'         => 'ndla-guide',
         'description'   => __( $description, 'ndla2019' ),
         'before_widget' => '<div id="%1$s" class="widget ndla-guide %2$s">',
@@ -17,7 +17,7 @@
   function register_landingpage_bottom_left_widget($name, $slug, $description) {
     register_sidebar(
       array(
-        'name'          => __( 'Landingside venstre nedre widget for ' . $name, 'ndla2019' ),
+        'name'          => __( '[' . $name . '] Venstre nedre widget', 'ndla2019' ),
         'id'            => 'ndla-bottom-left-' . $slug,
         'class'         => '',
         'description'   => __( $description, 'ndla2019' ),

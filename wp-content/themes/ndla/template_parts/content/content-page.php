@@ -29,7 +29,7 @@
               <?php dynamic_sidebar('ndla-bottom-left-' . $page_slug); ?>
             </div>
             <div class="ndla-links__guides">
-              <?php dynamic_sidebar('ndla-guide-' . $page_slug); ?>
+              <?php dynamic_sidebar('ndla-bottom-right-' . $page_slug); ?>
             </div>
           </div>
         </div>

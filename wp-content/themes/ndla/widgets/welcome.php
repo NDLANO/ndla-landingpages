@@ -3,7 +3,7 @@
   function register_welcome_widget($name, $slug, $description) {
     register_sidebar(
       array(
-        'name'          => __( 'Velkomstwidget for ' . $name, 'ndla2019' ),
+        'name'          => __( '[' . $name . '] Velkomstwidget', 'ndla2019' ),
         'id'            => 'ndla-welcome-' . $slug,
         'class'         => 'ndla-welcome',
         'description'   => __( $description, 'ndla2019' ),

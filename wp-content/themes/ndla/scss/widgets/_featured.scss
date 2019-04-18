@@ -9,12 +9,23 @@
   margin: $spacing--medium auto 0 auto;
 
   &__post {
-    flex: 0 0 50%;
+    // flex: 0 0 50%;
     box-sizing: border-box;
     position: relative;
     height: 260px;
     overflow: hidden;
     padding: 8px;
+
+    /*
+      Responsive styling
+    */
+    @media screen and (max-width: 620px) {
+      flex: 1 0 100%;
+    }
+
+    @media screen and (min-width: 621px) {
+      flex: 0 0 50%;
+    }
 
     a {
       display: block;
@@ -35,19 +46,27 @@
       max-width: 67%;
       color: #444;
       margin: 0;
-      &.right {
-        text-align: right;
-        // max-width: 100%;
-        right: $spacing--medium;
-      }
-      &:not(.right) {
+      /* Responsive styling */
+      @media screen and (max-width: 620px) {
+        bottom: $spacing--medium - 8px;
         left: $spacing--medium;
       }
-      &.bottom {
-        bottom: $spacing--medium - 8px;
-      }
-      &:not(.bottom) {
-        top: $spacing--medium - 8px;
+
+      @media screen and (min-width: 621px) {
+        &.right {
+          text-align: right;
+          // max-width: 100%;
+          right: $spacing--medium;
+        }
+        &:not(.right) {
+          left: $spacing--medium;
+        }
+        &.bottom {
+          bottom: $spacing--medium - 8px;
+        }
+        &:not(.bottom) {
+          top: $spacing--medium - 8px;
+        }
       }
     }
 
