@@ -3,19 +3,18 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
+  // justify-content: space-between;
   // justify-content: space-around;
   width: 100%;
   position: relative;
   margin: $spacing--medium auto 0 auto;
 
   &__post {
-    // flex: 0 0 50%;
     box-sizing: border-box;
     position: relative;
     height: 260px;
     overflow: hidden;
-    padding: 8px;
-
+    margin-bottom: 16px;
     /*
       Responsive styling
     */
@@ -25,12 +24,24 @@
 
     @media screen and (min-width: 621px) {
       flex: 0 0 50%;
+      // margin-bottom: 16px;
+      &:nth-child(even) {
+        .ndla-featured__post__image {
+          margin-left: 16px;
+        }
+      }
+
+      &:nth-child(odd) {
+        .ndla-featured__post__image {
+        }
+      }
     }
 
     a {
       display: block;
-      height: 100%;
+      height: auto;
       width: 100%;
+      overflow: hidden;
     }
 
     &--example {
@@ -42,9 +53,9 @@
     &__title {
       position: absolute;
       z-index: 5;
-
       max-width: 67%;
       color: #444;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.40);
       margin: 0;
       /* Responsive styling */
       @media screen and (max-width: 620px) {
@@ -65,21 +76,23 @@
           bottom: $spacing--medium - 8px;
         }
         &:not(.bottom) {
-          top: $spacing--medium - 8px;
+          // top: $spacing--medium - 8px;
+          bottom: $spacing--medium - 8px;
         }
       }
     }
 
     &__image {
       min-height: 260px;
+      width: 100%;
       background: #f9f9f9;
       background-size: cover;
       background-position: center center;
       position: absolute;
-      margin: 8px;
+      // margin: 8px;
       top: 0;
       left: 0;
-      right: 0;
+      // right: 0;
       bottom: 0;
       z-index: 4;
       overflow: hidden;

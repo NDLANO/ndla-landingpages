@@ -1,6 +1,16 @@
 .ndla-header {
   padding: $spacing;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  margin-bottom: $spacing;
+
   &__title {
+    flex: 1 0 auto;
+    margin-top: $spacing--large;
+    margin-bottom: 0;
     a {
       text-decoration: none;
       box-shadow: none;
@@ -13,5 +23,11 @@
       display: none;
       visibility: hidden;
     }
+  }
+
+  &__link {
+    flex: 0 1 auto;
+    line-height: 25px;
+    // float: right;
   }
 }

@@ -91,7 +91,8 @@
         bottom: $spacing--medium;
       }
       &:not(.bottom) {
-        top: $spacing--medium;
+        // top: $spacing--medium;
+        bottom: $spacing--medium;
       }
 
     }
@@ -126,7 +127,7 @@
 
     &__item {
       flex: 1 0 50%;
-
+      line-height: 38px;
       &--right {
         align-self: flex-end;
         text-align: right;
@@ -202,20 +203,25 @@
 .ndla-guide {
   li {
     display: inline-block;
+    margin-right: 9px;
+    margin-bottom: 9px;
+
     a {
       display: block;
-      padding: 4px 8px 4px 8px;
-      margin-right: 16px;
-      border-radius: 4px;
-      color: $brand-color;
-      background-color: $brand-color--light;
-      text-decoration: none;
+      background: $brand-color--light;
       box-shadow: none;
+      border-radius: 5px;
+      @include font-size(18px, 23px);
       font-weight: 600;
-      font-size: 18px;
 
-      &:hover {
-        background-color: $brand-color--lighter;
+      color: $brand-color--dark;
+      padding: 9px 20px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $brand-color;
+        color: $white;
       }
     }
   }

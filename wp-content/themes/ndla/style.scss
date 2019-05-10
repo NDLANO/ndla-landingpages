@@ -4,7 +4,7 @@ Theme URI:
 Author: Keyteq AS
 Author URI: https://keyteq.no
 Description: This is a theme developed for NDLA using custom built widgets and sidebars to achieve this. The theme uses featured-images, custom fields,
-Version: 1.03
+Version: 1.031
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ndla
@@ -12,7 +12,9 @@ Tags: one-column, accessibility-ready, custom-menu, editor-style, featured-image
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you’ve learned with others.
+
 */
+
 @import 'normalize';
 @import '~ndla-core/scss/core';
 @import '~ndla-core/scss/utilities';
@@ -26,7 +28,6 @@ Use it to make something cool, have fun, and share what you’ve learned with ot
 @import 'scss/widgets';
 
 html {
-  // overflow: hidden;
 }
 
 body {

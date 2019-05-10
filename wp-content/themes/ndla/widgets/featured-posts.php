@@ -37,7 +37,7 @@
         <div class="ndla-featured__post <?php echo $post_styling[$key]; ?>">
           <a href="<?php echo get_permalink($post->ID) ?>">
             <div class="ndla-featured__post__image" style="background-image: url('<?php print the_post_thumbnail_url( 'medium_large' ); ?>')"></div>
-            <h2 class="ndla-featured__post__title <?php echo $headerPositionClass[$key]; ?>">
+            <h2 class="ndla-featured__post__title"> <!-- <?php echo $headerPositionClass[$key]; ?>" -->
               <?php echo $post->post_title; ?>
             </h2>
           </a>

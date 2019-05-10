@@ -20,7 +20,7 @@
               'term' => 'landingside'
     );
     $landingPages = get_posts($args);
-    
+
     foreach($landingPages as $page) {
       // Register welcome widget for each landing page
       register_welcome_widget(
@@ -46,6 +46,13 @@
         $page->post_name,
         "Innehold for venstre nedre widget på landingside " . strtolower($page->post_title)
       );
+
+      $menuname = "[" . $page->post_title . "] Hurtigvalg";
+      // Register shortcut menu for it
+      $menu_exists = wp_get_nav_menu_object( $menuname );
+      if (!$menu_exists) {
+        $menu_id = wp_create_nav_menu( $menuname );
+      }
     }
   }
 
