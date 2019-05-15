@@ -1,5 +1,5 @@
-# Translation of WordPress - 5.1.x - Development - Administration - Network Admin in Norwegian (Bokmål)
-# This file is distributed under the same license as the WordPress - 5.1.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 5.2.x - Development - Administration - Network Admin in Norwegian (Bokmål)
+# This file is distributed under the same license as the WordPress - 5.2.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2019-01-26 13:21:28+0000\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: nb_NO\n"
-"Project-Id-Version: WordPress - 5.1.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 5.2.x - Development - Administration - Network Admin\n"
 
 #. translators: %s: DO_NOT_UPGRADE_GLOBAL_TABLES
 #: wp-admin/includes/network.php:113
@@ -36,10 +36,6 @@ msgstr "Det er en ventende endring av eposten til nettverksadmin til %s."
 #: wp-admin/includes/network.php:326
 msgid "Sub-domain Installation"
 msgstr "Sub-domeneinstallasjon"
-
-#: wp-admin/includes/class-wp-ms-themes-list-table.php:666
-msgid "Active Theme"
-msgstr "Aktivt tema"
 
 #: wp-admin/includes/network.php:295 wp-admin/includes/network.php:313
 msgid "Sub-directory Installation"
@@ -236,7 +232,7 @@ msgstr "Ingen nettsteder funnet."
 msgid "Enable"
 msgstr "Aktiver"
 
-#: wp-admin/includes/class-wp-ms-users-list-table.php:173
+#: wp-admin/includes/class-wp-ms-users-list-table.php:171
 msgctxt "user"
 msgid "Registered"
 msgstr "Registrert"
@@ -309,17 +305,17 @@ msgstr "Deaktiver for nettverk"
 msgid "Visit Theme Site"
 msgstr "Besøk temaets nettsted"
 
-#: wp-admin/includes/class-wp-ms-users-list-table.php:117
+#: wp-admin/includes/class-wp-ms-users-list-table.php:115
 msgctxt "user"
 msgid "Mark as Spam"
 msgstr "Merk som useriøs"
 
-#: wp-admin/includes/class-wp-ms-users-list-table.php:118
+#: wp-admin/includes/class-wp-ms-users-list-table.php:116
 msgctxt "user"
 msgid "Not Spam"
 msgstr "Ikke useriøs"
 
-#: wp-admin/includes/class-wp-ms-users-list-table.php:144
+#: wp-admin/includes/class-wp-ms-users-list-table.php:142
 msgid "Super Admin <span class=\"count\">(%s)</span>"
 msgid_plural "Super Admins <span class=\"count\">(%s)</span>"
 msgstr[0] "Superadmin <span class=\"count\">(%s)</span>"
@@ -851,6 +847,10 @@ msgstr "Velkommen til nettverksinstallsjonsprosessen!"
 msgid "Fill in the information below and you&#8217;ll be on your way to creating a network of WordPress sites. We will create configuration files in the next step."
 msgstr "Fyll inn informasjonen nedenfor og du er på god vei til å lage ditt eget nettverk av WordPress-nettsteder. Vi vil lage konfigurasjonsfiler i neste steg."
 
+#: wp-admin/includes/network.php:189
+msgid "Note:"
+msgstr "Merk:"
+
 #: wp-admin/includes/network.php:221
 msgid "Addresses of Sites in your Network"
 msgstr "Adresser til nettsteder i ditt nettverk"
@@ -957,10 +957,6 @@ msgstr "Denne skjermen lar deg konfigurere nettverket til å bruke subdomener (<
 msgid "The next screen for Network Setup will give you individually-generated lines of code to add to your wp-config.php and .htaccess files. Make sure the settings of your FTP client make files starting with a dot visible, so that you can find .htaccess; you may have to create this file if it really is not there. Make backup copies of those two files."
 msgstr "Det neste skjermbildet for Nettverksoppsett vil gi deg individuelt genererte linjer med kode som må legges til dine wp-config.php- og .htaccess-filer. Kontroller at innstillingene for din FTP-klient gjør at filer som starter med et punktum er synlige, slik at du kan finne .htaccess. Det kan være at du må lage denne filen hvis den ikke er der. Lag sikkerhetskopier av disse to filene."
 
-#: wp-admin/network.php:63
-msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen, now in the Network Admin navigation menu, will keep an archive of the added code. You can toggle between Network Admin and Site Admin by clicking on the Network Admin or an individual site name under the My Sites dropdown in the Toolbar."
-msgstr "Når du legger til denne koden og oppdaterer nettleseren din, bør nettstedsnettverket være aktivert. Dette skjermbildet, nå i navigasjonsmenyen i Nettverksadmin, vil spare et arkiv med den ekstra koden. Du kan veksle mellom Nettverksadmin og Nettstedsadmin ved å klikke på Nettverksadmin eller et individuelt nettstedsnavn under nedtrekksmenyen Mine nettsteder i verktøylinjen."
-
 #: wp-admin/network.php:64
 msgid "The choice of subdirectory sites is disabled if this setup is more than a month old because of permalink problems with &#8220;/blog/&#8221; from the main site. This disabling will be addressed in a future version."
 msgstr "Muligheten for å velge undermappe-nettsteder er ikke tilgjengelig hvis måneden er eldre enn en måned på grunn av problemer med permaleneker med &laquo;/blog/&raquo; fra hovednettstedet. Denne deaktiveringen vil bli adressert i en kommende versjon."
@@ -977,6 +973,10 @@ msgstr "Når nettverket er opprettet, kan du reaktivere dine utvidelser."
 #: wp-admin/includes/network.php:125
 msgid "Please <a href=\"%s\">deactivate your plugins</a> before enabling the Network feature."
 msgstr "Vennligst <a href=\"%s\">deaktiver utvidelsene dine</a> før du aktiverer nettverksfunksjonen."
+
+#: wp-admin/network.php:63
+msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen, now in the Network Admin navigation menu, will keep an archive of the added code. You can toggle between Network Admin and Site Admin by clicking on the Network Admin or an individual site name under the My Sites dropdown in the Toolbar."
+msgstr "Når du legger til denne koden og oppdaterer nettleseren din, bør nettstedsnettverket være aktivert. Dette skjermbildet, nå i navigasjonsmenyen i Nettverksadmin, vil spare et arkiv med den ekstra koden. Du kan veksle mellom Nettverksadmin og Nettstedsadmin ved å klikke på Nettverksadmin eller et individuelt nettstedsnavn under nedtrekksmenyen Mine nettsteder i verktøylinjen."
 
 #: wp-admin/network.php:60
 msgid "Choose subdomains or subdirectories; this can only be switched afterwards by reconfiguring your installation. Fill out the network details, and click Install. If this does not work, you may have to add a wildcard DNS record (for subdomains) or change to another setting in Permalinks (for subdirectories)."

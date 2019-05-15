@@ -69,7 +69,7 @@
     }
 
     function update( $new_instance, $old_instance ) {
-      $instance = old_instance();
+      $instance = array();
 
     	$selected_posts = ( ! empty ( $new_instance['selected_posts'] ) ) ? (array) $new_instance['selected_posts'] : array();
     	$instance['selected_posts'] = array_map( 'sanitize_text_field', $selected_posts );
@@ -107,8 +107,10 @@
           </label>
           <div>
             <label style="display: block; margin: 4px 0 4px 0px; font-weight: 600;">Kategori</label>
+            <!-- $(this).closest( 'form' ).find( 'input.widget-control-save' ).trigger( 'click' ); -->
+            <!-- onChange="console.log($(this).closest('.form').find( 'input.widget-control-save' ));" -->
             <select
-              onChange="$(this).closest( 'form' ).find( 'input.widget-control-save' ).trigger( 'click' );"
+              onChange="$(this).closest( 'form' ).find( 'input.widget-control-save' ).trigger( 'click' );";
               name="<?php echo esc_attr( $this->get_field_name( 'selected_categories' )); ?>[]?>">
               <option value="null" >Velg kategori</option>
               <?php foreach ($categories as $cat) : ?>

@@ -9794,7 +9794,7 @@ html.ie #root {
     @media screen and (min-width: 621px) {
       .ndla-featured__post {
         flex: 0 0 50%; }
-        .ndla-featured__post:nth-child(even) .ndla-featured__post__image {
+        .ndla-featured__post:nth-child(2) .ndla-featured__post__image, .ndla-featured__post:nth-child(4) .ndla-featured__post__image {
           margin-left: 16px; } }
     .ndla-featured__post a {
       display: block;

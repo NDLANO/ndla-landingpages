@@ -119,14 +119,19 @@
     }
   }
 
+  // Show admin bar
+  add_filter('show_admin_bar', '__return_true');
+
   /* Widget for welcome widget for pages */
   // add_action( 'widgets_init', 'ndla_sidebar' );
   add_action ( 'widgets_init', 'ndla_frontpage_sidebar');
   // add_action( 'widgets_init', 'register_shortcuts' );
   // load jquery
   // wp_enqueue_script("jquery");
+
   function theme_slug_setup() {
      add_theme_support( 'title-tag' );
   }
+
   add_action( 'after_setup_theme', 'theme_slug_setup' );
 ?>
